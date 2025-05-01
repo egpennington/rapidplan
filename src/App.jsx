@@ -5,7 +5,11 @@ import Section4HazardMonitoring from './components/Section4HarzardMonitoring'
 import Section5Decon from './components/Section5Decon'
 import Section6Comms from './components/Section6Comms'
 import Section7Medical from './components/Section7Medical'
-
+import Section8SiteMap from './components/Section8Sitemap'
+import Section9EntryObjectives from './components/Section9EntryObjectives'
+import Section10SOPs from './components/Section10SOPs'
+import Section11EmergencyProcedures from './components/Section11EmergencyProcedures'
+import Section12Signatures from './components/Section12Signatures'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -30,6 +34,11 @@ export default function App() {
           <Section5Decon />
           <Section6Comms />
           <Section7Medical />
+          <Section8SiteMap />
+          <Section9EntryObjectives />
+          <Section10SOPs />
+          <Section11EmergencyProcedures />
+          <Section12Signatures />
 
           <div
             className="export-footer"
@@ -64,18 +73,37 @@ export default function App() {
   );
 }
 
-
 function handleDownloadPDF() {
   const element = document.getElementById('export-section');
+
+  if (!element) {
+    alert("Export section not found.");
+    return;
+  }
+
+  // Force redraw to prevent blank capture
+  element.style.display = 'block';
+  element.style.visibility = 'visible';
 
   const options = {
     margin: 0.5,
     filename: 'rapidplan-report.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
+    image: { type: 'jpeg', quality: 0.95 },
+    html2canvas: {
+      scale: 1.5,              // Lower scale to avoid blank image issues
+      useCORS: true,           // Enables external image capture (local included)
+      allowTaint: true,        // Allows base64 data URLs
+      logging: false,
+      scrollX: 0,
+      scrollY: 0,
+      windowWidth: document.documentElement.offsetWidth,
+      windowHeight: document.documentElement.offsetHeight
+    },
     jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
   };
 
-  // html2pdf is available globally if loaded from CDN
-  window.html2pdf().set(options).from(element).save();
+  // Delay lets DOM and images fully render before capture
+  setTimeout(() => {
+    window.html2pdf().set(options).from(element).save();
+  }, 300);
 }
