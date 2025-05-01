@@ -58,8 +58,8 @@ export default function Section4HazardMonitoring() {
   return (
     <section>
       <h2 className="section-heading">Section 4: Hazard Monitoring</h2>
-      <div className="styled-fields">
 
+      <div className="styled-fields hazard-grid">
         {[
           { label: 'Wet pH Paper', key: 'wetPhPaper' },
           { label: 'HC Tube', key: 'hcTube' },
@@ -68,7 +68,7 @@ export default function Section4HazardMonitoring() {
           { label: 'Chem Rae', key: 'chemRae' },
           { label: 'Heat Gun / TIC', key: 'heatGun' },
           { label: 'Bear Paw', key: 'bearPaw' },
-          { label: 'Radiation Instrument', key: 'radiationInstrument' }
+          { label: 'Radiation Instrument', key: 'radiationInstrument' },
         ].map(({ label, key }) => (
           <label key={key}>
             <input
@@ -80,7 +80,7 @@ export default function Section4HazardMonitoring() {
           </label>
         ))}
 
-        <label>
+        <label className="custom-checkbox">
           <input
             type="checkbox"
             checked={tools.customToolChecked}
@@ -89,14 +89,13 @@ export default function Section4HazardMonitoring() {
           <input
             type="text"
             className="form-input"
-            placeholder="Custom tool"
+            placeholder="Other..."
             value={tools.customTool}
             onChange={handleCustomToolChange}
-            style={{ width: '60%' }}
           />
         </label>
 
-        <label>
+        <label className="hazard-comments">
           Comments:
           <textarea
             className="form-input"
@@ -112,5 +111,6 @@ export default function Section4HazardMonitoring() {
         <button className="close-button" onClick={clearDraft}>Clear Draft</button>
       </div>
     </section>
+
   );
 }

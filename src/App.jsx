@@ -2,56 +2,68 @@ import Header from './components/Header'
 import Section1Incident from './components/Section1Incident'
 import Section3Hazard from './components/Section3hazard'
 import Section4HazardMonitoring from './components/Section4HarzardMonitoring'
+import Section5Decon from './components/Section5Decon'
+import Section6Comms from './components/Section6Comms'
+import Section7Medical from './components/Section7Medical'
+
+import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <>
+    <div className="app-container">
       <Header />
-      <div id="export-section" className="export-section">
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-        <img src="/images/logo-green.png" alt="RapidPlan Logo" style={{ height: '50px' }} />
-        <div>
-          <h2 style={{ margin: 0 }}>RapidPlan</h2>
-          <p style={{ margin: 0, fontStyle: 'italic', color: '#444' }}>When seconds matter.</p>
+      <main>
+        <div id="export-section" className="export-section">
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+            <img src="/images/logo-green.png" alt="RapidPlan Logo" style={{ height: '50px' }} />
+            <div>
+              <h2 style={{ margin: 0 }}>RapidPlan</h2>
+              <p style={{ margin: 0, fontStyle: 'italic', color: '#444' }}>When seconds matter.</p>
+            </div>
+          </div>
+
+          <Section1Incident />
+          <Section3Hazard />
+          <Section4HazardMonitoring />
+          <Section5Decon />
+          <Section6Comms />
+          <Section7Medical />
+
+          <div
+            className="export-footer"
+            style={{
+              marginTop: '3rem',
+              fontSize: '1.2rem',
+              textAlign: 'center',
+              borderTop: '1px solid #ccc',
+              paddingTop: '1rem',
+              color: '#555',
+            }}
+          >
+            <div><strong>RapidPlan</strong> – Incident Response App</div>
+            <div>Generated on: {new Date().toLocaleString()}</div>
+            <div style={{ fontStyle: 'italic', color: '#999' }}>Draft Report</div>
+          </div>
+
         </div>
-      </div>
 
-        <Section1Incident />
-        <Section3Hazard />
-        <Section4HazardMonitoring />
-
-        <div
-          className="export-footer"
-          style={{
-            marginTop: '3rem',
-            fontSize: '1.2rem',
-            textAlign: 'center',
-            borderTop: '1px solid #ccc',
-            paddingTop: '1rem',
-            color: '#555',
-          }}
-        >
-          <div><strong>RapidPlan</strong> – Incident Response App</div>
-          <div>Generated on: {new Date().toLocaleString()}</div>
-          <div style={{ fontStyle: 'italic', color: '#999' }}>Draft Report</div>
+        <div className="form-actions">
+          <button className="about-button" onClick={handleDownloadPDF}>
+            Download PDF
+          </button>
+          <button className="about-button" onClick={() => window.print()}>
+            Print Report
+          </button>
         </div>
+      </main>
 
-      </div>
-
-      <div className="form-actions">
-        <button className="about-button" onClick={handleDownloadPDF}>
-          Download PDF
-        </button>
-
-        <button className="about-button" onClick={() => window.print()}>
-          Print Report
-        </button>
-
-      </div>  
-    </>    
-  )
+      <Footer />
+    </div>
+  );
 }
+
 
 function handleDownloadPDF() {
   const element = document.getElementById('export-section');
