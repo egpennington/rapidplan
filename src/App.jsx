@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import Section1Incident from './components/Section1Incident'
 import Section3Hazard from './components/Section3hazard'
+import Section4HazardMonitoring from './components/Section4HarzardMonitoring'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
 
         <Section1Incident />
         <Section3Hazard />
+        <Section4HazardMonitoring />
 
         <div
           className="export-footer"
