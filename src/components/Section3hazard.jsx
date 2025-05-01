@@ -1,15 +1,39 @@
-import React, { useState } from 'react';
+// src/components/Section3Hazard.js
+import React, { useState, useEffect } from 'react';
 import { chemicalData } from '../data/chemicalData';
 
 export default function Section3Hazard() {
   const [selectedMaterial, setSelectedMaterial] = useState('');
   const [hazardInfo, setHazardInfo] = useState(null);
 
+  // Load saved draft on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('hazard-chemical');
+    if (saved) {
+      setSelectedMaterial(saved);
+      const data = chemicalData.find(c => c.material === saved);
+      setHazardInfo(data || null);
+    }
+  }, []);
+
   const handleSelect = (e) => {
     const material = e.target.value;
     setSelectedMaterial(material);
     const data = chemicalData.find(c => c.material === material);
     setHazardInfo(data || null);
+  };
+
+  const handleSaveDraft = () => {
+    if (selectedMaterial) {
+      localStorage.setItem('hazard-chemical', selectedMaterial);
+      alert('Section 3 draft saved!');
+    }
+  };
+
+  const handleClearDraft = () => {
+    localStorage.removeItem('hazard-chemical');
+    setSelectedMaterial('');
+    setHazardInfo(null);
   };
 
   return (
@@ -23,6 +47,11 @@ export default function Section3Hazard() {
           <option key={idx} value={chem.material}>{chem.material}</option>
         ))}
       </select>
+
+      <div className="form-actions">
+        <button onClick={handleSaveDraft} className="about-button">Save Draft</button>
+        <button onClick={handleClearDraft} className="close-button">Clear Draft</button>
+      </div>
 
       {hazardInfo && (
         <div className="form-grid styled-fields">
