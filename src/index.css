@@ -1,68 +1,187 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+  font-size: 10px;
 }
 
 body {
-  margin: 0;
+  background: whitesmoke;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* NAVIGATION HEADER */
+.nav-bar {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #004b66;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1em;
+  color: #ffffff;
+  border-bottom: 4px solid #79d2a6;
+  flex-wrap: wrap;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.logo {
+  height: 50px;
+  width: auto;
+  margin-right: 1rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.nav-bar h1 {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav-bar p {
+  font-size: 1.2rem;
+  margin: 0.2rem 0;
+  color: #b8e2d1;
+}
+
+.nav-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.about-button {
+  background-color: #79d2a6;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  border-radius: 4px;
+  color: #004b66;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.about-button:hover {
+  background-color: #66c0a1;
+}
+
+.nav-actions a {
+  color: #ffffff;
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+
+/* Responsive layout */
+@media (max-width: 480px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  a:hover {
-    color: #747bff;
+
+  .logo {
+    margin-bottom: 0.5rem;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .nav-bar h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-bar p {
+    font-size: 0.8rem;
   }
 }
+
+/* ABOUT MODAL OVERLAY */
+.about-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.about-modal {
+  background: white;
+  color: #004b66;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.about-modal h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-modal p {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.close-button {
+  background: #004b66;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.close-button:hover {
+  background: #00344d;
+}
+
+/* Section 3: Hazard and Risk Analysis */
+
+.section-heading {
+  font-size: 2rem;
+  margin-bottom: 1.6rem;
+  color: #004b66;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #222;
+}
+
+.form-select {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.styled-fields {
+  background-color: #e8f6f3;
+  border: 1px solid #b8e2d1;
+  border-radius: 6px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  font-size: 1.4rem;
+}
+
+@media (min-width: 600px) {
+  .styled-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
