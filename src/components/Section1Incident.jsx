@@ -10,13 +10,14 @@ export default function Section1Incident() {
   useEffect(() => {
     const now = new Date();
     const saved = JSON.parse(localStorage.getItem('rapidplan-draft'));
+  
     if (saved?.incident) {
       setIncidentName(saved.incident.name || '');
       setLocation(saved.incident.location || '');
-      setDate(saved.incident.date || '');
-      setTime(saved.incident.time || '');
+      setDate(saved.incident.date || now.toLocaleDateString('en-CA'));
+      setTime(saved.incident.time || now.toTimeString().slice(0, 5)); // ✅ fallback here
     } else {
-      setDate(now.toISOString().split('T')[0]);
+      setDate(now.toLocaleDateString('en-CA'));
       setTime(now.toTimeString().slice(0, 5));
     }
   }, []);

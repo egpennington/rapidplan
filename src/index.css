@@ -178,7 +178,7 @@ body {
   background: #00344d;
 }
 
-/* Section 3: Hazard and Risk Analysis */
+/* Section styles  */
 .section-heading {
   font-size: 2rem;
   margin-bottom: 1.6rem;
@@ -204,6 +204,7 @@ body {
 
 .form-actions {
   display: flex;
+  justify-content: space-around;
   gap: 1rem;
   margin-bottom: 2rem;
 }
