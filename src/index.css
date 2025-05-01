@@ -65,33 +65,68 @@ body {
   cursor: pointer;
 }
 
-.about-button:hover {
+.about-button:hover,
+.nav-actions a:hover {
   background-color: #66c0a1;
 }
 
 .nav-actions a {
-  color: #ffffff;
+  inset: 1em;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  background-color: #79d2a6;
+}
+
+.nav-actions a:link {
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
   font-size: 1.4rem;
-  text-decoration: underline;
+  border-radius: 4px;
+  color: #004b66;
+  cursor: pointer;
 }
 
 /* Responsive layout */
 @media (max-width: 480px) {
   .nav-bar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1rem;
   }
 
   .logo {
     margin-bottom: 0.5rem;
+    height: 4em;
   }
 
   .nav-bar h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 0.2rem;
   }
 
   .nav-bar p {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .nav-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .nav-actions a,
+  .about-button,
+  .nav-actions a:link {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
   }
 }
 

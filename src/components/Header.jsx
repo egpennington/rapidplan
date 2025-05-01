@@ -12,9 +12,14 @@ export default function Header() {
           <p>Mission focused. When seconds matter.</p>
         </div>
         <div className="nav-actions">
-          <button className="about-button" onClick={() => setShowAbout(true)}>About</button>
-          <a href="https://stacks.cdc.gov/view/cdc/21265/cdc_21265_DS1.pdf" target="_blank" rel="noopener noreferrer">
-            NIOSH Guide
+          <button className="about-button" onClick={() => setShowAbout(true)}><i className="fa-solid fa-magnifying-glass"></i> About</button>
+          <a
+            href="https://stacks.cdc.gov/view/cdc/21265/cdc_21265_DS1.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="niosh-link"
+          >
+            <i className="fa fa-book"></i> Niosh
           </a>
         </div>
       </nav>
