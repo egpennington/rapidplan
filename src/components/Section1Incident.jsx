@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Section1Incident() {
   const [incidentName, setIncidentName] = useState('');
@@ -6,62 +6,95 @@ export default function Section1Incident() {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
 
+  // Set defaults or load from draft
   useEffect(() => {
     const now = new Date();
-    const formattedDate = now.toISOString().split('T')[0];
-    const formattedTime = now.toTimeString().slice(0, 5);
-    setDate(formattedDate);
-    setTime(formattedTime);
+    const saved = JSON.parse(localStorage.getItem('rapidplan-draft'));
+    if (saved?.incident) {
+      setIncidentName(saved.incident.name || '');
+      setLocation(saved.incident.location || '');
+      setDate(saved.incident.date || '');
+      setTime(saved.incident.time || '');
+    } else {
+      setDate(now.toISOString().split('T')[0]);
+      setTime(now.toTimeString().slice(0, 5));
+    }
   }, []);
 
+  function saveDraft() {
+    const existing = JSON.parse(localStorage.getItem('rapidplan-draft')) || {};
+    const updated = {
+      ...existing,
+      incident: {
+        name: incidentName,
+        location,
+        date,
+        time
+      }
+    };
+    localStorage.setItem('rapidplan-draft', JSON.stringify(updated));
+    alert('Incident info saved to draft.');
+  }
+
+  function clearDraft() {
+    const existing = JSON.parse(localStorage.getItem('rapidplan-draft')) || {};
+    delete existing.incident;
+    localStorage.setItem('rapidplan-draft', JSON.stringify(existing));
+    setIncidentName('');
+    setLocation('');
+    setDate('');
+    setTime('');
+    alert('Incident info cleared from draft.');
+  }
+
   return (
-    <div className="container form-section">
+    <section>
       <h2 className="section-heading">Section 1: Incident Information</h2>
       <div className="form-grid-2col">
         <div>
-          <label className="form-label" htmlFor="incident-name">Incident Name</label>
-          <input 
-            id="incident-name" 
-            className="form-input" 
-            type="text" 
-            value={incidentName} 
-            onChange={(e) => setIncidentName(e.target.value)} 
+          <label className="form-label" htmlFor="incidentName">Incident Name</label>
+          <input
+            id="incidentName"
+            className="form-input"
+            value={incidentName}
+            onChange={(e) => setIncidentName(e.target.value)}
           />
         </div>
-
         <div>
-          <label className="form-label" htmlFor="incident-date">Date</label>
-          <input 
-            id="incident-date" 
-            className="form-input" 
-            type="date" 
-            value={date} 
-            onChange={(e) => setDate(e.target.value)} 
+          <label className="form-label" htmlFor="date">Date</label>
+          <input
+            id="date"
+            type="date"
+            className="form-input"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
           />
         </div>
-
         <div>
-          <label className="form-label" htmlFor="incident-location">Location</label>
-          <input 
-            id="incident-location" 
-            className="form-input" 
-            type="text" 
-            value={location} 
-            onChange={(e) => setLocation(e.target.value)} 
+          <label className="form-label" htmlFor="location">Location</label>
+          <input
+            id="location"
+            className="form-input"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
           />
         </div>
-
         <div>
-          <label className="form-label" htmlFor="incident-time">Time</label>
-          <input 
-            id="incident-time" 
-            className="form-input" 
-            type="time" 
-            value={time} 
-            onChange={(e) => setTime(e.target.value)} 
+          <label className="form-label" htmlFor="time">Time</label>
+          <input
+            id="time"
+            type="time"
+            className="form-input"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
           />
         </div>
       </div>
-    </div>
+
+      <div className="form-actions">
+        <button className="about-button" onClick={saveDraft}>Save Draft</button>
+        <button className="close-button" onClick={clearDraft}>Clear Draft</button>
+      </div>
+    </section>
   );
 }
