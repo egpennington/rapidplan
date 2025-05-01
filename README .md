@@ -1,20 +1,22 @@
 # 🚒 RapidPlan
 
 **Mission-focused, when seconds matter.**
-
 RapidPlan is a fast, mobile-first emergency response app designed for field responders to quickly complete and submit a Site Safety and Control Plan during a hazardous materials incident or refinery emergency.
 
 ## 📋 Features
-
 - Mobile-first responsive design for in-field use
+
 - Section 3: Hazard and Risk Analysis with dropdown selector  
   -- Top 30 Refinery-Related Chemicals so field responders won't waste time scrolling weird chemicals. Making it manageable and super-fast to search.
   -- Data is based on NIOSH Pocket Guide and OSHA chemical datasheets 
   -- Properties include(see Description abbr): Physical State, pH, IDLH, Flash Point (FP), Ignition Point (IP), Vapor Pressure (VP), Vapor Density (VD), Specific Gravity (SG), LEL  
 - Auto-population of chemical hazard fields from local JSON data
+
 - Fast lookup — no internet required
+
 - Save as draft (via LocalStorage)
-- Email or export final plan (EmailJS or Firebase integration planned)
+
+- Email or export final plan (EmailJS, html2pdf.js, or Firebase integration planned)
 
 ## 🧪 Chemical Library (Top 30 Refinery Chemicals)
 
@@ -122,6 +124,7 @@ The RapidPlan app provides quick-access hazard data for the most commonly encoun
 - Data for Chemicals: Preload NIOSH chemical info into JSON or Firebase Database
 - Voice Input (optional upgrade): Use Web Speech API for voice-to-text
 - Offline Capabilities: Use service workers if needed, in case of poor signal
+- html2pdf.js(https://github.com/eKoopmans/html2pdf.js/blob/main/README.md#cdn)
 
 ## 📁 Project Structure
 

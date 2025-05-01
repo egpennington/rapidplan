@@ -246,3 +246,10 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+/* Hide button from PDF */
+@media print {
+  .form-actions {
+    display: none;
+  }
+}
