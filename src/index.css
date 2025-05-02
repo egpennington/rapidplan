@@ -261,6 +261,20 @@ main {
 
 .voice-btn.listening {
   background-color: #1fd882;
+  animation: pulse 1s ease-in-out infinite;
+  box-shadow: 0 0 0 rgba(31, 216, 130, 0.7);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(31, 216, 130, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(31, 216, 130, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(31, 216, 130, 0);
+  }
 }
   
 .form-grid-2col {
@@ -611,4 +625,8 @@ main {
 .footer-copyright {
   font-size: 1.2rem;
   color: #ccc;
+}
+
+.fa-microphone {
+  color: red;
 }
