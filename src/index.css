@@ -82,7 +82,7 @@ main {
 
 .about-button:hover,
 .nav-actions a:hover {
-  background-color: #66c0a1;
+  background-color: #fff;
 }
 
 .nav-actions a {
@@ -210,11 +210,10 @@ main {
 
 .form-select {
   width: 100%;
-  padding: 1rem;
+  padding: 1.4rem;
   font-size: 1.4rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 2rem;
+  border-radius: 4px;  
 }
 
 .form-actions {
@@ -299,6 +298,94 @@ main {
   }
 }
 
+/* Section 3 Hazard Card */
+.hazard-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chemical-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hazard-card {
+  background: #e8f6f3;
+  padding: 1rem;
+  border: 1px solid #b8e2d1;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.hazard-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  color: #004b66;
+}
+
+.hazard-card ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.4rem;
+}
+
+.hazard-card li {
+  margin-bottom: 0.3rem;
+}
+
+.hazard-card .close-button {
+  margin-top: 1rem;
+  background-color: #c0392b;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chemical-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.chemical-add-btn {
+  background-color: #79d2a6;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  border-radius: 4px;
+  color: #004b66;
+  cursor: pointer;
+}
+
+.chemical-add-btn:hover {
+  background: #004b66;
+  color: #fff;
+}
+
+.remove-chemical-btn {
+  margin-top: 1rem;
+  background-color: #cc3333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: inline-block;
+}
+
+.remove-chemical-btn:hover {
+  background-color: #a80000;
+}
+
+
 /* Section 4 custom layout */
 .hazard-grid {
   grid-template-columns: repeat(3, 1fr);
@@ -347,6 +434,28 @@ main {
 }
 
 /* Section 8 Site Map styles */
+.custom-file-upload {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #fff;
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid #004b66;
+  margin-bottom: 1rem;
+  user-select: none;
+}
+
+.custom-file-upload:hover {
+  background-color: #66c0a1;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+
 .hazard-comments {
   grid-column: 1 / -1;
   margin-top: 1rem;
@@ -392,6 +501,17 @@ main {
   background: red;
 }
 
+.download-btn {
+  padding: 1.5rem;
+  background: #fff;
+  color: #333;
+  border: 1px #333 solid;
+}
+
+.download-btn:hover {
+  background: #333;
+  color: #fff;
+}
 /* Footer styles */
 .footer {
   margin-top: 4rem;

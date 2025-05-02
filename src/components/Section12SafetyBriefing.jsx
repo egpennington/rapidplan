@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function Section12Signatures() {
+export default function Section12SafetyBriefing() {
   const [formData, setFormData] = useState({
     dateTime: '',
     safetyOfficer: '',

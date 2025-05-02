@@ -112,17 +112,20 @@ export default function Section8SiteMap() {
   return (
     <section>
       <h2 className="section-heading">Section 8: Site Map</h2>
+      <p>up to 4 Site Map Images (camera supported)</p>
 
-      <label>
-          Upload up to 4 Site Map Images (camera supported):
-          <input
-            type="file"
-            accept="image/*"
-            capture="environment"
-            multiple
-            onChange={handleImageUpload}
-          />
-        </label>
+      <label className="custom-file-upload">
+        <i className="fa-solid fa-camera" style={{ marginRight: '0.5rem' }}></i>
+        Upload Site Map Images
+        <input
+          type="file"
+          accept="image/*"
+          capture="environment"
+          multiple
+          onChange={handleImageUpload}
+        />
+      </label>
+
 
         {imagePreviews.length > 0 && (
           <>

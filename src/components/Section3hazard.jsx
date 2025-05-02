@@ -2,75 +2,81 @@ import { useState, useEffect } from 'react';
 import { chemicalData } from '../data/chemicalData';
 
 export default function Section3Hazard() {
-  const [selectedMaterial, setSelectedMaterial] = useState('');
-  const [hazardInfo, setHazardInfo] = useState(null);
+  const [selectedChemical, setSelectedChemical] = useState('');
+  const [selectedChemicals, setSelectedChemicals] = useState([]);
 
-  // Load draft on mount
   useEffect(() => {
-    const savedDraft = JSON.parse(localStorage.getItem('rapidplan-draft'));
-    if (savedDraft?.hazard) {
-      setSelectedMaterial(savedDraft.hazard.material);
-      setHazardInfo(savedDraft.hazard);
-    }
+    const saved = JSON.parse(localStorage.getItem('rapidplan-draft'));
+    if (saved?.section3) setSelectedChemicals(saved.section3);
   }, []);
 
-  // When user selects material
-  function handleSelect(e) {
-    const selected = e.target.value;
-    setSelectedMaterial(selected);
-    const found = chemicalData.find(c => c.material === selected);
-    setHazardInfo(found);
-  }
+  const handleAddChemical = () => {
+    const chem = chemicalData.find(c => c.material === selectedChemical);
+    if (chem && !selectedChemicals.some(c => c.material === chem.material)) {
+      setSelectedChemicals(prev => [...prev, chem]);
+    }
+    setSelectedChemical('');
+  };
 
-  // Save hazard info to shared draft
-  function saveDraft() {
-    const existing = JSON.parse(localStorage.getItem('rapidplan-draft')) || {};
-    const updatedDraft = {
-      ...existing,
-      hazard: hazardInfo,
-    };
-    localStorage.setItem('rapidplan-draft', JSON.stringify(updatedDraft));
-    alert('Hazard info saved to draft.');
-  }
+  const handleRemoveChemical = (index) => {
+    const updated = [...selectedChemicals];
+    updated.splice(index, 1);
+    setSelectedChemicals(updated);
+  };
 
-  // Clear only hazard part of draft
-  function clearDraft() {
+  const saveDraft = () => {
     const existing = JSON.parse(localStorage.getItem('rapidplan-draft')) || {};
-    delete existing.hazard;
+    localStorage.setItem('rapidplan-draft', JSON.stringify({ ...existing, section3: selectedChemicals }));
+    alert('Hazard data saved.');
+  };
+
+  const clearDraft = () => {
+    const existing = JSON.parse(localStorage.getItem('rapidplan-draft')) || {};
+    delete existing.section3;
     localStorage.setItem('rapidplan-draft', JSON.stringify(existing));
-    setSelectedMaterial('');
-    setHazardInfo(null);
-    alert('Hazard info cleared from draft.');
-  }
+    setSelectedChemicals([]);
+  };
 
   return (
     <section>
       <h2 className="section-heading">Section 3: Hazard and Risk Analysis</h2>
 
-      <label htmlFor="chemical" className="form-label">Select Material/Chemical</label>
-      <select
-        id="chemical"
-        className="form-select"
-        value={selectedMaterial}
-        onChange={handleSelect}
-      >
-        <option value="">-- Choose a Chemical --</option>
-        {chemicalData.map((chem) => (
-          <option key={chem.material} value={chem.material}>
-            {chem.material}
-          </option>
-        ))}
-      </select>
-
-      {hazardInfo && (
-        <div className="styled-fields">
-          {Object.entries(hazardInfo).map(([key, value]) =>
-            key !== 'material' ? (
-              <div key={key}><strong>{key.toUpperCase()}:</strong> {value}</div>
-            ) : null
-          )}
+      <div className="styled-fields hazard-selector">
+        <div className="add-chemical-row">
+          <label className="form-label">Select Material/Chemical</label>
+          <div>
+            <select
+              className="form-select"
+              value={selectedChemical}
+              onChange={(e) => setSelectedChemical(e.target.value)}
+            >
+              <option value="">-- Choose a chemical --</option>
+              {chemicalData.map((c, i) => (
+                <option key={i} value={c.material}>{c.material}</option>
+              ))}
+            </select>
+            <button className="chemical-add-btn" onClick={handleAddChemical}> <i className="fa-solid fa-plus"></i> Chemical</button>
+          </div>
         </div>
-      )}
+
+        <div className="chemical-grid">
+          {selectedChemicals.map((chem, index) => (
+            <div key={index} className="hazard-card">
+              <h3>{chem.material}</h3>
+              <p><strong>State:</strong> {chem.physicalState}</p>
+              {chem.pH && <p><strong>pH:</strong> {chem.pH}</p>}
+              {chem.IDLH && <p><strong>IDLH:</strong> {chem.IDLH}</p>}
+              {chem.FP && <p><strong>FP:</strong> {chem.FP}</p>}
+              {chem.IP && <p><strong>IP:</strong> {chem.IP}</p>}
+              {chem.VP && <p><strong>VP:</strong> {chem.VP}</p>}
+              {chem.VD && <p><strong>VD:</strong> {chem.VD}</p>}
+              {chem.SG && <p><strong>SG:</strong> {chem.SG}</p>}
+              {chem.LEL && <p><strong>LEL:</strong> {chem.LEL}</p>}
+              <button className="remove-chemical-btn" onClick={() => handleRemoveChemical(index)}>Remove</button>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <div className="form-actions">
         <button className="about-button" onClick={saveDraft}>Save Draft</button>
