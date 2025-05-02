@@ -1,4 +1,3 @@
-// useSpeechRecognition.js
 import { useState, useRef } from 'react';
 
 export function useSpeechRecognition() {

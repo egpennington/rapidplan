@@ -277,8 +277,8 @@ main {
   }
 
   .form-grid-2col > div:nth-child(1) { order: 1; } /* Incident Name */
-  .form-grid-2col > div:nth-child(2) { order: 3; } /* Date */
-  .form-grid-2col > div:nth-child(3) { order: 2; } /* Location */
+  .form-grid-2col > div:nth-child(2) { order: 2; } /* Date */
+  .form-grid-2col > div:nth-child(3) { order: 3; } /* Location */
   .form-grid-2col > div:nth-child(4) { order: 4; } /* Time */
 }
 
