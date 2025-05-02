@@ -1,12 +1,21 @@
 import { useState, useEffect } from 'react';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 export default function Section1Incident() {
   const [incidentName, setIncidentName] = useState('');
   const [location, setLocation] = useState('');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
+  const [activeField, setActiveField] = useState(null);
 
-  // Set defaults or load from draft
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition,
+    isMicrophoneAvailable
+  } = useSpeechRecognition();
+
   useEffect(() => {
     const now = new Date();
     const saved = JSON.parse(localStorage.getItem('rapidplan-draft'));
@@ -15,12 +24,38 @@ export default function Section1Incident() {
       setIncidentName(saved.incident.name || '');
       setLocation(saved.incident.location || '');
       setDate(saved.incident.date || now.toLocaleDateString('en-CA'));
-      setTime(saved.incident.time || now.toTimeString().slice(0, 5)); // ✅ fallback here
+      setTime(saved.incident.time || now.toTimeString().slice(0, 5));
     } else {
       setDate(now.toLocaleDateString('en-CA'));
       setTime(now.toTimeString().slice(0, 5));
     }
-  }, []);
+  }, []);  
+
+  useEffect(() => {
+    if (!listening && transcript) {
+      if (activeField === 'incidentName') {
+        setIncidentName(transcript);
+      } else if (activeField === 'location') {
+        setLocation(transcript);
+      }
+      resetTranscript();
+      setActiveField(null);
+    }
+  }, [listening, transcript, resetTranscript, activeField]);  
+
+  const handleVoiceInput = (field) => {
+    if (!browserSupportsSpeechRecognition) {
+      alert('Speech recognition is not supported in this browser.');
+      return;
+    }
+    if (!isMicrophoneAvailable) {
+      alert('Microphone is not available.');
+      return;
+    }
+    setActiveField(field);
+    resetTranscript();
+    SpeechRecognition.startListening({ continuous: false });
+  };  
 
   function saveDraft() {
     const existing = JSON.parse(localStorage.getItem('rapidplan-draft')) || {};
@@ -52,15 +87,46 @@ export default function Section1Incident() {
     <section>
       <h2 className="section-heading">Section 1: Incident Information</h2>
       <div className="form-grid-2col">
-        <div>
-          <label className="form-label" htmlFor="incidentName">Incident Name</label>
+      <div>
+        <label className="form-label" htmlFor="incidentName">Incident Name</label>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
           <input
             id="incidentName"
             className="form-input"
             value={incidentName}
             onChange={(e) => setIncidentName(e.target.value)}
           />
+          <button
+            type="button"
+            className={`voice-btn ${listening && activeField === 'incidentName' ? 'listening' : ''}`}
+            onClick={() => handleVoiceInput('incidentName')}
+            title="Start voice input"
+          >
+            🎤
+          </button>
         </div>
+      </div>
+
+      <div>
+        <label className="form-label" htmlFor="location">Location</label>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <input
+            id="location"
+            className="form-input"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+          <button
+            type="button"
+            className={`voice-btn ${listening && activeField === 'location' ? 'listening' : ''}`}
+            onClick={() => handleVoiceInput('location')}
+            title="Start voice input"
+          >
+            🎤
+          </button>
+        </div>
+      </div>
+
         <div>
           <label className="form-label" htmlFor="date">Date</label>
           <input
@@ -71,15 +137,7 @@ export default function Section1Incident() {
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
-        <div>
-          <label className="form-label" htmlFor="location">Location</label>
-          <input
-            id="location"
-            className="form-input"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-        </div>
+        
         <div>
           <label className="form-label" htmlFor="time">Time</label>
           <input
