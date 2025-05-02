@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Fragment } from 'react'
 
 export default function Section2Organization() {
   const [formData, setFormData] = useState({
@@ -89,7 +90,7 @@ export default function Section2Organization() {
         <div><strong>PPE Level</strong></div>
 
         {formData.entryTeam.map((_, i) => (
-          <>
+          <Fragment key={i}>
             <input
               className="form-input"
               value={formData.entryTeam[i]}
@@ -124,7 +125,7 @@ export default function Section2Organization() {
               <option value="C">C</option>
               <option value="D">D</option>
             </select>
-          </>
+          </Fragment>
         ))}
       </div>
 
