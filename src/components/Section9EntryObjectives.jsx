@@ -1,7 +1,16 @@
 import { useState, useEffect } from 'react';
+import { useCustomSpeechRecognition } from '../hooks/SpeechRecognition';
 
 export default function Section9EntryObjectives() {
   const [objectives, setObjectives] = useState('');
+  const [activeField, setActiveField] = useState(null);
+
+  const {
+    transcript,
+    setTranscript,
+    listening,
+    startListening
+  } = useCustomSpeechRecognition();
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem('rapidplan-draft'));
@@ -9,6 +18,19 @@ export default function Section9EntryObjectives() {
       setObjectives(saved.section9);
     }
   }, []);
+
+  useEffect(() => {
+    if (!listening && transcript && activeField === 'objectives') {
+      setObjectives((prev) => prev ? `${prev} ${transcript}` : transcript);
+      setTranscript('');
+      setActiveField(null);
+    }
+  }, [listening, transcript, activeField, setTranscript]);
+
+  const handleVoiceInput = (field) => {
+    setActiveField(field);
+    startListening();
+  };
 
   const handleChange = (e) => {
     setObjectives(e.target.value);
@@ -36,17 +58,26 @@ export default function Section9EntryObjectives() {
       <h2 className="section-heading">Section 9: Entry Objectives</h2>
       <div className="styled-fields">
         <div className="hazard-comments">
-            <label>
-            Entry Objectives:
+          <label htmlFor="objectives">Entry Objectives:</label>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
             <textarea
-                value={objectives}
-                onChange={handleChange}
-                className="form-input"
-                rows="5"
-                placeholder="Describe entry goals, known hazards, and specific areas of concern..."
+              id="objectives"
+              value={objectives}
+              onChange={handleChange}
+              className="form-input"
+              rows="5"
+              placeholder="Describe entry goals, known hazards, and specific areas of concern..."
             />
-            </label>        
-        </div>        
+            <button
+              type="button"
+              className={`voice-btn ${listening && activeField === 'objectives' ? 'listening' : ''}`}
+              onClick={() => handleVoiceInput('objectives')}
+              title="Start voice input"
+            >
+              🎤
+            </button>
+          </div>
+        </div>
       </div>
 
       <div className="form-actions">
