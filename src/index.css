@@ -24,6 +24,8 @@ html, body, #root {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  background: #fff;
+  padding: 1.3rem;
 }
 
 main {
@@ -297,6 +299,64 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+/* Section 2 Organization styles */
+/* Section 2 layout for Entry & Decon team table-like display */
+.styled-fields.section2-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns: Entry, PPE, Decon, PPE */
+  gap: 1rem;
+  background-color: #e8f6f3;
+  border: 1px solid #b8e2d1;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Optional: Adjust label appearance */
+.styled-fields.section2-grid label {
+  font-size: 1.3rem;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Text inputs and selects inside section 2 */
+.styled-fields.section2-grid .form-input,
+.styled-fields.section2-grid .form-select {
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.organization-roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.organization-grid {
+  display: grid;
+  grid-template-columns: 2fr 0.3fr 2fr 0.3fr;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Make team member name inputs wider */
+.organization-grid input[type="text"] {
+  width: 100%;
+  min-width: 140px;
+}
+
+.organization-grid select {
+  width: 40px;
+  padding: 1rem 0.2rem;
+  text-align: center;
+}
+
 
 /* Section 3 Hazard Card */
 .hazard-selector {

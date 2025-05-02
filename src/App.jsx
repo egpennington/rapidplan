@@ -1,7 +1,10 @@
 import { useState } from 'react';
+// import { APP_VERSION } from './version';
+import { APP_VERSION } from '../version'
 
 import Header from './components/Header'
 import Section1Incident from './components/Section1Incident'
+import Section2Organization from './components/Section2Organization';
 import Section3Hazard from './components/Section3hazard'
 import Section4HazardMonitoring from './components/Section4HarzardMonitoring'
 import Section5Decon from './components/Section5Decon'
@@ -56,6 +59,7 @@ export default function App() {
       <main>
         <div id="export-section" className="export-section">
           <Section1Incident />
+          <Section2Organization />
           <Section3Hazard addedChemicals={addedChemicals} setAddedChemicals={setAddedChemicals} />
           <Section4HazardMonitoring />
           <Section5Decon />
@@ -79,6 +83,23 @@ export default function App() {
               ))}
             </section>
           )}
+          <div
+              className="export-footer"
+              style={{
+                marginTop: '3rem',
+                fontSize: '1.2rem',
+                textAlign: 'center',
+                borderTop: '1px solid #ccc',
+                paddingTop: '1rem',
+                color: '#555',
+              }}
+            >
+              <div><strong>RapidPlan v{APP_VERSION}</strong> – Incident Response App</div>
+              <div>Generated on: {new Date().toLocaleString()}</div>
+              <div style={{ fontStyle: 'italic', color: '#999' }}>Draft Report
+              </div>
+          </div>
+
         </div>
 
         <div className="form-actions">
@@ -86,7 +107,7 @@ export default function App() {
           <button className="about-button download-btn" onClick={() => window.print()}><i className="fa-solid fa-print"></i> Print Report</button>
         </div>
       </main>
-      <Footer />
+      <Footer version={APP_VERSION} />
     </div>
   );  
 }

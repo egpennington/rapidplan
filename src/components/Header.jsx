@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { APP_VERSION } from '/version.js';
 
 export default function Header() {
   const [showAbout, setShowAbout] = useState(false);
@@ -30,6 +31,8 @@ export default function Header() {
             <h2>About RapidPlan</h2>
             <p>RapidPlan is a mobile-first emergency response tool designed for use in hazardous materials and refinery incidents.</p>
             <p>It streamlines the Site Safety and Control Plan process, offering quick dropdowns, auto-fill chemical data, and form export options.</p>
+            <p style={{ fontSize: '1.2rem', color: '#666', marginTop: '1.5rem' }}>
+            <strong>Version:</strong> v{APP_VERSION}</p>
             <button className="close-button" onClick={() => setShowAbout(false)}>Close</button>
           </div>
         </div>
