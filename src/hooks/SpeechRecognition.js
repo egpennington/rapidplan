@@ -1,17 +1,20 @@
 import { useState, useRef } from 'react';
 
-export function useSpeechRecognition() {
+export function useCustomSpeechRecognition() {
   const [transcript, setTranscript] = useState('');
   const [listening, setListening] = useState(false);
   const recognitionRef = useRef(null);
 
   const startListening = () => {
-    if (!('webkitSpeechRecognition' in window)) {
-      alert('Speech recognition not supported in this browser');
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      alert('Speech recognition is not supported in this browser.');
       return;
     }
 
-    const recognition = new window.webkitSpeechRecognition();
+    const recognition = new SpeechRecognition();
     recognition.lang = 'en-US';
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
@@ -31,5 +34,5 @@ export function useSpeechRecognition() {
     recognitionRef.current = recognition;
   };
 
-  return { transcript, listening, startListening };
+  return { transcript, setTranscript, listening, startListening };
 }

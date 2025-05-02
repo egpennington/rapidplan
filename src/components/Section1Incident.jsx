@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import { useCustomSpeechRecognition } from '../hooks/SpeechRecognition';
 
 export default function Section1Incident() {
   const [incidentName, setIncidentName] = useState('');
@@ -8,13 +8,8 @@ export default function Section1Incident() {
   const [time, setTime] = useState('');
   const [activeField, setActiveField] = useState(null);
 
-  const {
-    transcript,
-    listening,
-    resetTranscript,
-    browserSupportsSpeechRecognition,
-    isMicrophoneAvailable
-  } = useSpeechRecognition();
+  const { transcript, setTranscript, listening, startListening } = useCustomSpeechRecognition();
+
 
   useEffect(() => {
     const now = new Date();
@@ -32,30 +27,23 @@ export default function Section1Incident() {
   }, []);  
 
   useEffect(() => {
-    if (!listening && transcript) {
+    if (!listening && transcript && activeField) {
       if (activeField === 'incidentName') {
         setIncidentName(transcript);
       } else if (activeField === 'location') {
         setLocation(transcript);
       }
-      resetTranscript();
+  
       setActiveField(null);
+      setTranscript('');
     }
-  }, [listening, transcript, resetTranscript, activeField]);  
+  }, [listening, transcript, activeField]);
+  
 
-  const handleVoiceInput = (field) => {
-    if (!browserSupportsSpeechRecognition) {
-      alert('Speech recognition is not supported in this browser.');
-      return;
-    }
-    if (!isMicrophoneAvailable) {
-      alert('Microphone is not available.');
-      return;
-    }
+  function handleVoiceInput(field) {
     setActiveField(field);
-    resetTranscript();
-    SpeechRecognition.startListening({ continuous: false });
-  };  
+    startListening();
+  }
 
   function saveDraft() {
     const existing = JSON.parse(localStorage.getItem('rapidplan-draft')) || {};
