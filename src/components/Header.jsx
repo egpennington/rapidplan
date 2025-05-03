@@ -30,8 +30,9 @@ export default function Header() {
           <div className="about-modal" onClick={e => e.stopPropagation()}>
             <h2>About RapidPlan</h2>
             <p>RapidPlan is a mobile-first emergency response tool designed for use in hazardous materials and refinery incidents.</p>
-            <p>It streamlines the Site Safety and Control Plan process, offering quick dropdowns, auto-fill chemical data, and form export options.</p>
-            <p>Now featuring integrated voice recognition, RapidPlan allows responders to dictate critical information like incident names and locations hands-free—enhancing speed, accuracy, and safety in the field.</p>
+            <p>It streamlines the Site Safety and Control Plan process with fast dropdowns, auto-filled chemical data, and export-ready reports.</p>
+            <p>Now featuring integrated voice recognition, responders can dictate key details—like incident names and objectives—hands-free for greater speed and safety.</p>
+            <p>Coming soon - RapidPlan also works offline, ensuring access to critical planning tools even in low-connectivity or emergency environments.</p>
             <p style={{ fontSize: '1.2rem', color: '#666', marginTop: '1.5rem' }}>
             <strong>Version:</strong> v{APP_VERSION}</p>
             <button className="close-button" onClick={() => setShowAbout(false)}>Close</button>
