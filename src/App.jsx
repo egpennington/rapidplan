@@ -1,63 +1,43 @@
 import { useState } from 'react';
-// import { APP_VERSION } from './version';
-import { APP_VERSION } from '../version'
+import { APP_VERSION } from '../version';
 
-import Header from './components/Header'
-import Section1Incident from './components/Section1Incident'
+import Header from './components/Header';
+import Section1Incident from './components/Section1Incident';
 import Section2Organization from './components/Section2Organization';
-import Section3Hazard from './components/Section3hazard'
-import Section4HazardMonitoring from './components/Section4HarzardMonitoring'
-import Section5Decon from './components/Section5Decon'
-import Section6Comms from './components/Section6Comms'
-import Section7Medical from './components/Section7Medical'
-import Section8SiteMap from './components/Section8SiteMap'
-import Section9EntryObjectives from './components/Section9EntryObjectives'
-import Section10SOPs from './components/Section10SOPs'
-import Section11EmergencyProcedures from './components/Section11EmergencyProcedures'
+import Section3Hazard from './components/Section3hazard';
+import Section4HazardMonitoring from './components/Section4HarzardMonitoring';
+import Section5Decon from './components/Section5Decon';
+import Section6Comms from './components/Section6Comms';
+import Section7Medical from './components/Section7Medical';
+import Section8SiteMap from './components/Section8SiteMap';
+import Section9EntryObjectives from './components/Section9EntryObjectives';
+import Section10SOPs from './components/Section10SOPs';
+import Section11EmergencyProcedures from './components/Section11EmergencyProcedures';
 import Section12SafetyBriefing from './components/Section12SafetyBriefing';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
   const [addedChemicals, setAddedChemicals] = useState({ selected: '', items: [] });
 
-  function handleDownloadPDF() {
-    const element = document.getElementById('export-section');
-  
-    if (!element) {
-      alert("Export section not found.");
-      return;
-    }
-  
-    // Force redraw to prevent blank capture
-    element.style.display = 'block';
-    element.style.visibility = 'visible';
-  
-    const options = {
-      margin: 0.5,
-      filename: 'rapidplan-report.pdf',
-      image: { type: 'jpeg', quality: 0.95 },
-      html2canvas: {
-        scale: 1.5,
-        useCORS: true,
-        allowTaint: true,
-        logging: false,
-        scrollX: 0,
-        scrollY: 0,
-        windowWidth: document.documentElement.offsetWidth,
-        windowHeight: document.documentElement.offsetHeight
-      },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-    }; 
-    setTimeout(() => {
-      window.html2pdf().set(options).from(element).save();
-    }, 300);
-  }   
+  const handleStart = () => {
+    setShowSplash(false);
+  };
+
+  if (showSplash) {
+    return (
+      <div className="splash-screen" onClick={handleStart}>
+        <img src="./images/splash.png" alt="RapidPlan Splash" className="splash-image" />
+      </div>
+    );
+  }
 
   return (
     <div className="app-container">
       <Header />
       <main>
         <div id="export-section" className="export-section">
+          {/* All main content below */}
           <Section1Incident />
           <Section2Organization />
           <Section3Hazard addedChemicals={addedChemicals} setAddedChemicals={setAddedChemicals} />
@@ -83,23 +63,12 @@ export default function App() {
               ))}
             </section>
           )}
-          <div
-              className="export-footer"
-              style={{
-                marginTop: '3rem',
-                fontSize: '1.2rem',
-                textAlign: 'center',
-                borderTop: '1px solid #ccc',
-                paddingTop: '1rem',
-                color: '#555',
-              }}
-            >
-              <div><strong>RapidPlan v{APP_VERSION}</strong> – Incident Response App</div>
-              <div>Generated on: {new Date().toLocaleString()}</div>
-              <div style={{ fontStyle: 'italic', color: '#999' }}>Draft Report
-              </div>
-          </div>
 
+          <div className="export-footer" style={{ marginTop: '3rem', fontSize: '1.2rem', textAlign: 'center', borderTop: '1px solid #ccc', paddingTop: '1rem', color: '#555' }}>
+            <div><strong>RapidPlan v{APP_VERSION}</strong> – Incident Response App</div>
+            <div>Generated on: {new Date().toLocaleString()}</div>
+            <div style={{ fontStyle: 'italic', color: '#999' }}>Draft Report</div>
+          </div>
         </div>
 
         <div className="form-actions">
@@ -109,5 +78,38 @@ export default function App() {
       </main>
       <Footer version={APP_VERSION} />
     </div>
-  );  
+  );
+
+  function handleDownloadPDF() {
+    const element = document.getElementById('export-section');
+
+    if (!element) {
+      alert("Export section not found.");
+      return;
+    }
+
+    element.style.display = 'block';
+    element.style.visibility = 'visible';
+
+    const options = {
+      margin: 0.5,
+      filename: 'rapidplan-report.pdf',
+      image: { type: 'jpeg', quality: 0.95 },
+      html2canvas: {
+        scale: 1.5,
+        useCORS: true,
+        allowTaint: true,
+        logging: false,
+        scrollX: 0,
+        scrollY: 0,
+        windowWidth: document.documentElement.offsetWidth,
+        windowHeight: document.documentElement.offsetHeight
+      },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+    };
+
+    setTimeout(() => {
+      window.html2pdf().set(options).from(element).save();
+    }, 300);
+  }
 }

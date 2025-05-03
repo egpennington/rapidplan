@@ -627,6 +627,20 @@ main {
   color: #ccc;
 }
 
-.fa-microphone {
-  color: red;
+/* Splash Page */
+.splash-screen {
+  /* background-image: url(../public/images/splash.png); */
+  height: 100vh;
+  width: 100%;
+  background: #004e6b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.splash-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
 }
