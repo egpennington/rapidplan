@@ -86,7 +86,8 @@ export default function Section2Organization() {
         <div><strong>Entry Team</strong>
         <p>(buddy systen)</p></div>
         <div><strong>PPE Level</strong></div>
-        <div><strong>Decon Team</strong></div>
+        <div><strong>Decon Team</strong>
+        <p>(1 level lower)</p></div>
         <div><strong>PPE Level</strong></div>
 
         {formData.entryTeam.map((_, i) => (
