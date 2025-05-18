@@ -18,7 +18,7 @@ export default function Header() {
             href="https://stacks.cdc.gov/view/cdc/21265/cdc_21265_DS1.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="niosh-link"
+            className="niosh-link-btn"
           >
             <i className="fa fa-book"></i> Niosh
           </a>

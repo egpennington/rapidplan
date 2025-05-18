@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
 import { chemicalData } from '../data/chemicalData';
+import Toast from './Toast'
 
 export default function Section3Hazard() {
   const [selectedChemical, setSelectedChemical] = useState('');
   const [selectedChemicals, setSelectedChemicals] = useState([]);
+  const [addedIndex, setAddedIndex] = useState(null);
+  const [removingIndex, setRemovingIndex] = useState(null);
+  const [saveStatus, setSaveStatus] = useState(null);
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem('rapidplan-draft'));
@@ -13,22 +17,33 @@ export default function Section3Hazard() {
   const handleAddChemical = () => {
     const chem = chemicalData.find(c => c.material === selectedChemical);
     if (chem && !selectedChemicals.some(c => c.material === chem.material)) {
-      setSelectedChemicals(prev => [...prev, chem]);
+      setSelectedChemicals(prev => {
+        const updated = [...prev, chem];
+        setAddedIndex(updated.length - 1);
+        setTimeout(() => setAddedIndex(null), 500);
+        return updated;
+      });
     }
+
     setSelectedChemical('');
   };
 
   const handleRemoveChemical = (index) => {
-    const updated = [...selectedChemicals];
-    updated.splice(index, 1);
-    setSelectedChemicals(updated);
+    setRemovingIndex(index);
+    setTimeout(() => {
+      const updated = [...selectedChemicals];
+      updated.splice(index, 1);
+      setSelectedChemicals(updated);
+      setRemovingIndex(null);
+    }, 400);
   };
 
   const saveDraft = () => {
     const existing = JSON.parse(localStorage.getItem('rapidplan-draft')) || {};
     localStorage.setItem('rapidplan-draft', JSON.stringify({ ...existing, section3: selectedChemicals }));
-    alert('Hazard data saved.');
-  };
+    setSaveStatus('✔️ Hazard data saved');
+    setTimeout(() => setSaveStatus(null), 2000);
+    };
 
   const clearDraft = () => {
     const existing = JSON.parse(localStorage.getItem('rapidplan-draft')) || {};
@@ -61,7 +76,17 @@ export default function Section3Hazard() {
 
         <div className="chemical-grid">
           {selectedChemicals.map((chem, index) => (
-            <div key={index} className="hazard-card">
+            <div key={index} className={`hazard-card 
+              ${removingIndex === index ? 'fade-out' : ''} 
+              ${addedIndex === index ? 'bounce-in' : ''}`}
+            >
+              <button
+                onClick={() => handleRemoveChemical(index)}
+                className="remove-chemical-icon"
+                title="Remove this chemical"
+              >
+                ×
+              </button>
               <h3>{chem.material}</h3>
               <p><strong>State:</strong> {chem.physicalState}</p>
               {chem.pH && <p><strong>pH:</strong> {chem.pH}</p>}
@@ -72,7 +97,6 @@ export default function Section3Hazard() {
               {chem.VD && <p><strong>VD:</strong> {chem.VD}</p>}
               {chem.SG && <p><strong>SG:</strong> {chem.SG}</p>}
               {chem.LEL && <p><strong>LEL:</strong> {chem.LEL}</p>}
-              <button className="remove-chemical-btn" onClick={() => handleRemoveChemical(index)}>Remove</button>
             </div>
           ))}
         </div>
@@ -80,7 +104,9 @@ export default function Section3Hazard() {
 
       <div className="form-actions">
         <button className="about-button" onClick={saveDraft}>Save Draft</button>
-        <button className="close-button" onClick={clearDraft}>Clear Draft</button>
+        {saveStatus && <Toast message={saveStatus} />}
+
+        <button className="close-button" onClick={clearDraft}>Clear All</button>
       </div>
     </section>
   );
