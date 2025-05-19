@@ -15,7 +15,7 @@ export default function Header() {
         </div>
         <div className="nav-actions">
           <button className="about-button" onClick={() => setShowAbout(true)}>
-            <i class="fa-solid fa-circle-info"></i> About
+            <i className="fa-solid fa-circle-info"></i> About
           </button>
           {showAbout && <AboutModal onClose={() => setShowAbout(false)} />}
 

@@ -54,8 +54,7 @@ main {
 .logo-sm {
   width: 1.4rem;
   height: auto;
-  vertical-align: text-bottom;
-  margin-right: 0.4rem;  
+  vertical-align: text-bottom; 
 }
 
 .nav-bar h1 {
@@ -233,6 +232,20 @@ main {
   margin-top: 0.5rem;
   line-height: 1.5;
   font-style: italic;
+}
+
+.site-tip {
+  font-size: 1.2rem;
+  color: #444;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.section-divider {
+  border: none;
+  border-top: 2px solid #c0e1db;
+  margin: 3rem 0 2rem;
+  width: 100%;
 }
 
 .modal-buttons .about-button {

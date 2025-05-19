@@ -12,9 +12,9 @@ export default function AboutModal({ onClose }) {
 
         {view === 'about' && (
           <>
-            <p><img src="/images/logo-green.png" className="logo-sm" alt="Rapid Plan R logo in green" /><strong>RapidPlan</strong> is a mobile-first emergency response tool for creating fast, accurate Site Safety and Control Plans during hazardous materials and refinery incidents.</p>
+            <p><img src="/images/logo-green.png" className="logo-sm" alt="Rapid Plan R logo in green" /><strong>apidPlan</strong> is a mobile-first emergency response tool for creating fast, accurate Site Safety and Control Plans during hazardous materials and refinery incidents.</p>
             <p><strong>📋 Based on ICS 208 Guidelines</strong></p>
-            <p>Designed for clarity and speed in the field, RapidPlan features quick dropdowns, pre-filled chemical hazard data, and export-ready reports.</p>
+            <p>Designed for clarity and speed in the field, <img src="/images/logo-green.png" className="logo-sm" alt="Rapid Plan R logo in green" />apidPlan features quick dropdowns, pre-filled chemical hazard data, and export-ready reports, and real-time site photo capture — preserving visual layouts directly in your plan.</p>
             <p>Now featuring <strong>voice recognition</strong> in key fields like incident name and entry objectives—allowing hands-free input in critical moments.</p>
             <p><em>Offline access</em> and installable app capabilities are coming soon.</p>
 
@@ -54,9 +54,13 @@ export default function AboutModal({ onClose }) {
                 <strong>Medical (Section 7):</strong> Indicate medical access and special instructions.
               </li>
               <li>
-                <strong>Site Map (Section 8):</strong> 📷 Upload up to 4 photos of the site layout, including zones, staging, or access routes.<br />
-                <small>Drawing in the app is not supported — but you can sketch on paper or a whiteboard and snap a photo.</small>
+                <strong>
+                    Site Map (Section 8): <i className="fa-solid fa-camera" style={{ marginRight: '0.4rem' }}></i>
+                </strong>
+                Upload up to 4 photos of the site layout, including zones, staging, or access routes.<br />
+                Drawing in the app is not supported — but you can sketch on paper or a whiteboard and snap a photo, preserving a permanent record in your plan while staying hands-free in the field. A photo captures the scene exactly as it is in the moment — with no guesswork, no redraws, and no misinterpretation.
               </li>
+
               <li>
                 <strong>Entry Objectives (Section 9):</strong> List all objectives to be performed by the Entry Team in  Exclusion Zone and any parameters which will alter or stop entry operations.
               </li>

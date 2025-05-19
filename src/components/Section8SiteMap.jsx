@@ -111,12 +111,17 @@ export default function Section8SiteMap() {
 
   return (
     <section>
-      <h2 className="section-heading">Section 8: Site Map</h2>
+      <h2 className="section-heading">Section 8: Site
+        <p className="site-tip">
+          Take a photo of the site layout, staging area, or zone boundaries to document conditions in real time. You can also snap a whiteboard or hand-drawn sketch — all images are saved as permanent, timestamped records in your plan.
+        </p>
+      </h2>
+      
       <p>up to 4 Site Map Images (camera supported)</p>
 
       <label className="custom-file-upload">
         <i className="fa-solid fa-camera" style={{ marginRight: '0.5rem' }}></i>
-        Upload Site Map Images
+         Upload Site Map Images
         <input
           type="file"
           accept="image/*"
@@ -125,7 +130,6 @@ export default function Section8SiteMap() {
           onChange={handleImageUpload}
         />
       </label>
-
 
         {imagePreviews.length > 0 && (
           <>

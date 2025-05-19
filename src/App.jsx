@@ -16,6 +16,21 @@ import Section11EmergencyProcedures from './components/Section11EmergencyProcedu
 import Section12SafetyBriefing from './components/Section12SafetyBriefing';
 import Footer from './components/Footer';
 
+/* Reset Rapid Plan Form */
+function handleResetPlan() {
+  const [toastMessage, setToastMessage] = useState(null);
+
+  const confirmed = confirm("⚠️ Are you sure you want to clear the entire Rapid Plan?\nUnsaved data will be lost.");
+
+  if (confirmed) {
+    localStorage.removeItem('rapidplan-draft');
+    location.reload(); // Refresh app cleanly
+  } else {
+    setToastMessage("Plan reset canceled. Save your data before clearing.");
+    setTimeout(() => setToastMessage(null), 3000);
+  }
+}
+
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [addedChemicals, setAddedChemicals] = useState({ selected: '', items: [] });
@@ -39,15 +54,25 @@ export default function App() {
         <div id="export-section" className="export-section">
           {/* All main content below */}
           <Section1Incident />
+          <hr className="section-divider" />
           <Section2Organization />
+          <hr className="section-divider" />
           <Section3Hazard addedChemicals={addedChemicals} setAddedChemicals={setAddedChemicals} />
+          <hr className="section-divider" />
           <Section4HazardMonitoring />
+          <hr className="section-divider" />
           <Section5Decon />
+          <hr className="section-divider" />
           <Section6Comms />
+          <hr className="section-divider" />
           <Section7Medical />
+          <hr className="section-divider" />
           <Section8SiteMap />
+          <hr className="section-divider" />
           <Section9EntryObjectives />
+          <hr className="section-divider" />
           <Section10SOPs />
+          <hr className="section-divider" />
           <Section11EmergencyProcedures />
           <Section12SafetyBriefing />
 
