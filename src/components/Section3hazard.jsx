@@ -30,10 +30,18 @@ export default function Section3Hazard() {
 
   const handleRemoveChemical = (index) => {
     setRemovingIndex(index);
+
     setTimeout(() => {
       const updated = [...selectedChemicals];
       updated.splice(index, 1);
       setSelectedChemicals(updated);
+
+    const existing = JSON.parse(localStorage.getItem('rapidplan-draft')) || {};
+    localStorage.setItem('rapidplan-draft', JSON.stringify({
+      ...existing,
+      section3: updated
+    }));
+
       setRemovingIndex(null);
     }, 400);
   };
