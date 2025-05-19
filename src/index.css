@@ -231,11 +231,13 @@ main {
   background-color: #004b66;
   color: white;
   border: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .close-button:hover {
   background-color:  #e63946;
   color: #fff;
+  box-shadow: 0 0 8px rgba(230, 57, 70, 0.4);
 }
 
 .form-actions .about-button {
