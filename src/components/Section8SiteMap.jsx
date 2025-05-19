@@ -116,8 +116,6 @@ export default function Section8SiteMap() {
           Take a photo of the site layout, staging area, or zone boundaries to document conditions in real time. You can also snap a whiteboard or hand-drawn sketch — all images are saved as permanent, timestamped records in your plan.
         </p>
       </h2>
-      
-      <p>up to 4 Site Map Images (camera supported)</p>
 
       <label className="custom-file-upload">
         <i className="fa-solid fa-camera" style={{ marginRight: '0.5rem' }}></i>
@@ -130,6 +128,7 @@ export default function Section8SiteMap() {
           onChange={handleImageUpload}
         />
       </label>
+      <p>up to 4 Site Map Images (camera supported)</p>
 
         {imagePreviews.length > 0 && (
           <>

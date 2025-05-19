@@ -57,6 +57,17 @@ main {
   vertical-align: text-bottom; 
 }
 
+.fa-list-check {
+  color: #388e6c;
+}
+
+.logo-lg {
+  width: 2rem;
+  height: auto;
+  vertical-align: text-bottom;
+  margin-right: -0.3rem;
+}
+
 .nav-bar h1 {
   font-size: 2rem;
   margin: 0;
@@ -86,6 +97,10 @@ main {
   border-radius: 4px;
   color: #004b66;
   cursor: pointer;
+}
+
+.about {
+  padding: 0.5rem 1.35rem;
 }
 
 .about-button:hover,
@@ -330,6 +345,7 @@ main {
   border: 1px solid #b8e2d1;
   border-radius: 6px;
   padding: 1.5rem;
+  margin-top: 0.7rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
@@ -675,6 +691,7 @@ main {
 .custom-file-upload {
   display: inline-block;
   padding: 0.6rem 1.2rem;
+  margin-bottom: 0.7rem;
   background-color: #fff;
   color: #333;
   font-size: 1.4rem;
@@ -682,7 +699,6 @@ main {
   border-radius: 4px;
   cursor: pointer;
   border: 2px solid #004b66;
-  margin-bottom: 1rem;
   user-select: none;
 }
 

@@ -78,7 +78,7 @@ export default function Section3Hazard() {
                 <option key={i} value={c.material}>{c.material}</option>
               ))}
             </select>
-            <button className="chemical-add-btn" onClick={handleAddChemical}> <i className="fa-solid fa-plus"></i> Chemical</button>
+            <button className="chemical-add-btn" onClick={handleAddChemical}> <i className="fa-solid fa-plus"></i> Chemical <i className="fa-solid fa-flask"></i></button>
           </div>
         </div>
 

@@ -4,6 +4,7 @@ import AboutModal from './AboutModal';
 
 export default function Header() {
   const [showAbout, setShowAbout] = useState(false);
+  const [aboutView, setAboutView] = useState('about')
 
   return (
     <header>
@@ -14,20 +15,34 @@ export default function Header() {
           <p>Mission focused. When seconds matter.</p>
         </div>
         <div className="nav-actions">
-          <button className="about-button" onClick={() => setShowAbout(true)}>
+          <button
+            className="about-button about"
+            onClick={() => {
+              setAboutView('about');
+              setShowAbout(true);
+            }}
+          >
             <i className="fa-solid fa-circle-info"></i> About
           </button>
-          {showAbout && <AboutModal onClose={() => setShowAbout(false)} />}
 
-          <a
-            href="https://stacks.cdc.gov/view/cdc/21265/cdc_21265_DS1.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="niosh-link-btn"
+          <button
+            className="about-button"
+            onClick={() => {
+              setAboutView('howto');
+              setShowAbout(true);
+            }}
           >
-            <i className="fa fa-book"></i> Niosh
-          </a>
+            <i className="fa-solid fa-book-open-reader"></i> How to
+          </button>
+
+          {showAbout && (
+            <AboutModal
+              onClose={() => setShowAbout(false)}
+              initialView={aboutView}
+            />
+          )}
         </div>
+
       </nav>
     </header>
   );

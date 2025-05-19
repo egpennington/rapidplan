@@ -2,13 +2,16 @@ import { useState } from 'react';
 import { APP_VERSION } from '/version.js';
 import Toast from './Toast';
 
-export default function AboutModal({ onClose }) {
-  const [view, setView] = useState('about');
+export default function AboutModal({ onClose, initialView = 'about' }) {
+  const [view, setView] = useState(initialView);
 
   return (
     <div className="about-overlay" onClick={onClose}>
       <div className="about-modal" onClick={(e) => e.stopPropagation()}>
-        <h2>{view === 'about' ? 'About RapidPlan: ' : 'How to Use RapidPlan'}</h2>
+        <h2>{view === 'about' ? ('About RapidPlan:') : 
+        (<><i className="fa-solid fa-list-check"></i> How to Use <img src="/images/logo-green.png" className="logo-lg" alt="Rapid Plan R logo in green" />apidPlan 
+        </>)}
+        </h2>
 
         {view === 'about' && (
           <>
