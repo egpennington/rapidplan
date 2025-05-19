@@ -240,7 +240,8 @@ main {
 }
 
 .modal-buttons .close-button {
-  padding: 0.8rem 2rem;
+  padding: 0.7rem 2rem;
+  border: 1px solid transparent;
 }
 
 .close-button,
