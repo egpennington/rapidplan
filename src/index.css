@@ -51,6 +51,13 @@ main {
   margin-right: 1rem;
 }
 
+.logo-sm {
+  width: 1.4rem;
+  height: auto;
+  vertical-align: text-bottom;
+  margin-right: 0.4rem;  
+}
+
 .nav-bar h1 {
   font-size: 2rem;
   margin: 0;
@@ -196,6 +203,10 @@ main {
   color: #003b55;
 }
 
+.about-modal p {
+  color: #333;
+}
+
 .about-modal ul.about-list {
   list-style: none;
   padding: 0;
@@ -216,8 +227,25 @@ main {
   line-height: 1.4;
 }
 
+.about-modal .about-footnote {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.modal-buttons .about-button {
+  margin-right: 2rem;
+}
+
+.modal-buttons .close-button {
+  padding: 0.88rem 2rem;
+}
+
 .close-button,
 .form-actions .about-button {
+  background: #388e6c;
   margin-top: 2rem;
   font-size: 1.2rem;
   border-radius: 4px;
@@ -241,7 +269,7 @@ main {
 }
 
 .form-actions .about-button {
-  background-color: #79d2a6;
+  background-color: #388e6c;
   color: white;
   border: 1px solid transparent;
 }

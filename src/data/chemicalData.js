@@ -16,6 +16,19 @@ export const chemicalData = [
     LEL: "15%"
   },
   {
+    material: "Argon",
+    physicalState: "Gas",
+    pH: "",
+    IDLH: "Asphyxiant (No IDLH established)",
+    FP: "Non-flammable",
+    IP: "15.76 eV",
+    VP: "N/A",
+    VD: "1.38 (air = 1)",
+    SG: "N/A",
+    LEL: "None",
+    UEL: "None"
+  },
+  {
     material: "Benzene",
     physicalState: "Liquid",
     pH: "N/A",
