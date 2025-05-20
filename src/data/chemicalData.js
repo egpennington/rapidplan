@@ -41,6 +41,19 @@ export const chemicalData = [
     LEL: "1.2%"
   },
   {
+  material: "2-Butanone (MEK)",
+  physicalState: "Liquid",
+  pH: "N/A",
+  IDLH: "3000 ppm",
+  FP: "16°F",
+  IP: "9.5 eV",
+  VP: "0.11 atm",
+  VD: "2.5",
+  SG: "0.805",
+  LEL: "1.4%",
+  UEL: "11.4%"
+  },
+  {
     material: "Chlorine",
     physicalState: "Gas",
     pH: "N/A",
