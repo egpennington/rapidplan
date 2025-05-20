@@ -100,7 +100,21 @@ export default function Section3Hazard() {
               {chem.pH && <p><strong>pH:</strong> {chem.pH}</p>}
               {chem.IDLH && <p><strong>IDLH:</strong> {chem.IDLH}</p>}
               {chem.FP && <p><strong>FP:</strong> {chem.FP}</p>}
-              {chem.IP && <p><strong>IP:</strong> {chem.IP}</p>}
+              {chem.IP && 
+                <p>
+                  <strong>IP:</strong> {chem.IP}
+                  {' '}
+                  {chem.material === "Emtonium" ? (
+                    <span className="pid-fantasy">Only detectable by wizards ✨</span>
+                  ) : (
+                    !isNaN(parseFloat(chem.IP)) && parseFloat(chem.IP) <= 10.6 ? (
+                      <span className="pid-ok">PID Detectable</span>
+                    ) : (
+                      <span className="pid-warn">Not detectable by 10.6 eV PID</span>
+                    )
+                  )}
+                </p>
+              }
               {chem.VP && <p><strong>VP:</strong> {chem.VP}</p>}
               {chem.VD && <p><strong>VD:</strong> {chem.VD}</p>}
               {chem.SG && <p><strong>SG:</strong> {chem.SG}</p>}

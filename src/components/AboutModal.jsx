@@ -9,8 +9,8 @@ export default function AboutModal({ onClose, initialView = 'about' }) {
     <div className="about-overlay" onClick={onClose}>
       <div className="about-modal" onClick={(e) => e.stopPropagation()}>
         <h2>{view === 'about' ? ('About RapidPlan:') : 
-        (<><i className="fa-solid fa-list-check"></i> How to Use <img src="/images/logo-green.png" className="logo-lg" alt="Rapid Plan R logo in green" />apidPlan 
-        </>)}
+            (<><i className="fa-solid fa-list-check"></i> How to Use <img src="/images/logo-green.png" className="logo-lg" alt="Rapid Plan R logo in green" />apidPlan 
+            </>)}
         </h2>
 
         {view === 'about' && (
@@ -39,7 +39,8 @@ export default function AboutModal({ onClose, initialView = 'about' }) {
                 <strong>Organization (Section 2):</strong> Assign roles for Incident Command, Supervisors, Entry Team, Decon Team, and PPE level required.
               </li>
               <li>
-                <strong>Hazard & Chemical Selection (Section 3):</strong> Select up to 4 known materials from the top 30 most common refinery chemicals. View hazard info like pH, IDLH, FP, etc. Use ❌ to remove individual chemical.
+                <strong>Hazard & Chemical Selection (Section 3):</strong> Select up known materials from the top 30 most common refinery chemicals. View hazard info like pH, IDLH, FP, etc. Use ❌ to remove individual chemical. <small>Note: Vapor pressure values are converted to <strong>atm</strong> (from mmHg in NIOSH) to allow better comparison across materials. ex. 75 mmHg ÷ 760 ≈ 0.0987 atm</small>
+
                 <p className="about-footnote">
                     Based on OSHA, EPA Tier II reporting, and industry guidelines (API, NFPA 472, CHEMTREC, FEMA), this list covers over 90% of chemicals responders typically encounter in refinery incidents.
                 </p>

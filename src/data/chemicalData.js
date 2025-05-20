@@ -1,5 +1,18 @@
 export const chemicalData = [
   {
+    material: "Acetylene",
+    physicalState: "Gas",
+    pH: "N/A",
+    IDLH: "N.D.",
+    FP: "Gas – extremely flammable",
+    IP: "11.4 eV",
+    VP: "44.2 atm",
+    VD: "0.9",
+    SG: "0.91 (gas, air = 1)",
+    LEL: "2.5%",
+    UEL: "100%"
+  },
+  {
     material: "Ammonia",
     physicalState: "Gas",
     MH: "17",
@@ -34,11 +47,12 @@ export const chemicalData = [
     pH: "N/A",
     IDLH: "500 ppm",
     FP: "-11°C",
-    IP: "9.25 eV",
+    IP: "9.24 eV",
     VP: "0.1 atm",
     VD: "2.7",
-    SG: "0.876",
-    LEL: "1.2%"
+    SG: "0.88",
+    LEL: "1.2%",
+    UEL: "7.8%"
   },
   {
   material: "2-Butanone (MEK)",
