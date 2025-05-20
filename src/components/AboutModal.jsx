@@ -39,11 +39,11 @@ export default function AboutModal({ onClose, initialView = 'about' }) {
                 <strong>Organization (Section 2):</strong> Assign roles for Incident Command, Supervisors, Entry Team, Decon Team, and PPE level required.
               </li>
               <li>
-                <strong>Hazard & Chemical Selection (Section 3):</strong> Select up known materials from the top 30 most common refinery chemicals. View hazard info like pH, IDLH, FP, etc. Use ❌ to remove individual chemical. <small>Note: Vapor pressure values are converted to <strong>atm</strong> (from mmHg in NIOSH) to allow better comparison across materials. ex. 75 mmHg ÷ 760 ≈ 0.0987 atm</small>
+                <strong>Hazard & Chemical Selection (Section 3):</strong> Select up known materials from the top 30 most common refinery chemicals. View hazard info like pH, IDLH, FP, etc. Use ❌ to remove individual chemical. <small>Note: Vapor pressure values are converted to <strong>atm</strong> (from mmHg in NIOSH) to allow better comparison across materials. Example: 75 mmHg ÷ 760 mmHg ≈ 0.0987 atm. Flash point and boiling points are displayed in Fahrenheit (converted from Celsius). Some values may show both °C / °F for international clarity. </small>
 
                 <p className="about-footnote">
-                    Based on OSHA, EPA Tier II reporting, and industry guidelines (API, NFPA 472, CHEMTREC, FEMA), this list covers over 90% of chemicals responders typically encounter in refinery incidents.
-                </p>
+                    Based on OSHA, EPA Tier II reporting, and industry guidelines (API, NFPA 472, CHEMTREC, FEMA), this list covers over 90% of chemicals responders typically encounter in refinery incidents. Some fuels like Diesel are not listed in NIOSH, so data is sourced from SDS and NFPA chemical hazard guides.
+                </p> 
               </li>
               <li>
                 <strong>Hazard Monitoring (Section 4):</strong> Select instruments used (e.g., MultiRae, heat gun, radiation meter).
