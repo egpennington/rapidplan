@@ -96,7 +96,8 @@ export default function Section3Hazard() {
                 ×
               </button>
               <h3>{chem.material}</h3>
-              <p><strong>State:</strong> {chem.physicalState}</p>                
+              <p><strong>State:</strong> {chem.physicalState}</p>
+              {chem.MW && <p><strong>MW:</strong> {chem.MW}</p>}              
               {chem.pH && <p><strong>pH:</strong> {chem.pH}</p>}
               {chem.IDLH && <p><strong>IDLH:</strong> {chem.IDLH}</p>}
               {chem.FP && <p><strong>FP:</strong> {chem.FP}</p>}              
@@ -105,14 +106,18 @@ export default function Section3Hazard() {
               {chem.SG && <p><strong>SG:</strong> {chem.SG}</p>}
               {chem.LEL && <p><strong>LEL:</strong> {chem.LEL}</p>}
               <div className="chemical-highlights">
-                {chem.MW && (
+                {chem.SG && chem.physicalState === "Gas" && (
                   <p>
-                    <strong>MW:</strong> {chem.MW}{' '}
-                    {parseFloat(chem.MW) > 29 ? (
-                      <span className="mw-warn">🡇 Heavier than air</span>
-                    ) : (
-                      <span className="mw-ok">🡅 Lighter than air</span>
-                    )}
+                    <strong>SG:</strong> {chem.SG}
+                    {(() => {
+                      const match = chem.SG.match(/[\d.]+/);
+                      const sgValue = match ? parseFloat(match[0]) : null;
+                      return sgValue !== null && (
+                        <span className={sgValue < 1 ? "sg-light" : "sg-heavy"}>
+                          {sgValue < 1 ? " 🡅 Lighter than air" : " 🡇 Heavier than air"}
+                        </span>
+                      );
+                    })()}
                   </p>
                 )}
 

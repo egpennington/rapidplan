@@ -38,8 +38,8 @@ export const chemicalData = [
     FP: "Non-flammable",
     IP: "15.76 eV",
     VP: "N/A",
-    VD: "1.38 (gas, air = 1)",
-    SG: "N/A",
+    VD: "1.38",
+    SG: "1.38 (gas, air = 1)",
     LEL: "None",
     UEL: "None",
     asphyxiant: true
@@ -47,13 +47,14 @@ export const chemicalData = [
   {
     material: "Benzene",
     physicalState: "Liquid",
+    MW: "78.1",
     pH: "",
     IDLH: "500 ppm",
     FP: "12.°F",
     IP: "9.24 eV",
     VP: "0.1 atm",
     VD: "2.7",
-    SG: "0.88",
+    SG: "0.88 (liquid, water = 1)",
     LEL: "1.2%",
     UEL: "7.8%"
   },
@@ -80,7 +81,7 @@ export const chemicalData = [
     IP: "9.5 eV",
     VP: "0.11 atm",
     VD: "2.5",
-    SG: "0.805",
+    SG: "0.81 (liquid, water = 1)",
     LEL: "1.4%",
     UEL: "11.4%"
   },  
@@ -106,8 +107,8 @@ export const chemicalData = [
     FP: "None",
     IP: "13.8 eV",
     VP: "N/A",
-    VD: "1.53 (gas, air = 1)",
-    SG: "1.56",
+    VD: "1.53",
+    SG: "1.53 (gas, air = 1)",
     LEL: "N/A",
     UEL: "N/A",
     asphyxiant: true
@@ -134,8 +135,8 @@ export const chemicalData = [
     FP: "125.6°F",
     IP: "N/A",
     VP: "0.003 atm",
-    VD: "4.5",
-    SG: "0.841",
+    VD: "4.0",
+    SG: "0.841 (liquid, water = 1)",
     LEL: "1.3%",
     UEL: "6.0%"
   },
@@ -148,7 +149,7 @@ export const chemicalData = [
     IP: "10.5 eV",
     VP: "0.06 atm",
     VD: "1.6",
-    SG: "0.79",
+    SG: "0.79 (liquid, water = 1)",
     LEL: "3.3%",
     UEL: "19%"
   },
@@ -175,8 +176,8 @@ export const chemicalData = [
     FP: "-45°F",
     IP: "10.1 eV",
     VP: "0.45 atm",
-    VD: "3–4",
-    SG: "0.73",
+    VD: "3.5",
+    SG: "0.73 (liquid, water = 1)",
     LEL: "1.4%",
     UEL: "7.6%"
   },
@@ -247,7 +248,7 @@ export const chemicalData = [
     IP: "10.8 eV",
     VP: "0.13 atm",
     VD: "1.1",
-    SG: "0.79",
+    SG: "0.79 (liquid, water = 1)",
     LEL: "6%",
     UEL: "36%"
   },
@@ -261,7 +262,7 @@ export const chemicalData = [
     IP: "N/A",
     VP: "0.5 atm",
     VD: ">1",
-    SG: "0.75–0.85",
+    SG: "0.8 (liquid, water = 1)",
     LEL: "1.1%",
     UEL: "5.9%"
   },
@@ -320,7 +321,7 @@ export const chemicalData = [
     IP: "10.3 eV",
     VP: "0.55 atm",
     VD: "2.5",
-    SG: "0.63",
+    SG: "0.63 (liquid, water = 1)",
     LEL: "1.5%",
     UEL: "7.8%"
   },
@@ -334,7 +335,7 @@ export const chemicalData = [
     IP: "8.5 eV",
     VP: "0.0008 atm",
     VD: "3.2",
-    SG: "1.06",
+    SG: "1.06 (liquid, water = 1)",
     LEL: "1.8%",
     UEL: "8.6%"
   },
@@ -376,7 +377,7 @@ export const chemicalData = [
     IP: "N/A",
     VP: "Negligible",
     VD: "N/A",
-    SG: "2.13 (solid)",
+    SG: "2.13 (50% solution, water = 1)",
     LEL: "N/A",
     UEL: "N/A"
   },
@@ -418,7 +419,7 @@ export const chemicalData = [
     IP: "8.8 eV",
     VP: "0.037 atm",
     VD: "3.2",
-    SG: "0.87",
+    SG: "0.87 (liquid, water = 1)",
     LEL: "1.1%",
     UEL: "7.1%"
   },
@@ -432,13 +433,14 @@ export const chemicalData = [
     IP: "8.6 eV",
     VP: "0.01 atm",
     VD: "3.7",
-    SG: "0.86",
+    SG: "0.86 (liquid, water = 1)",
     LEL: "1.1%",
     UEL: "7.0%"
   },
   {
     material: "Emtonium",
     physicalState: "Legendary Vapor",
+    MW: "42 (The answer to everything)",
     pH: "Perfect 7",
     IDLH: "Only if you're unworthy",
     FP: "Explodes with creativity",
