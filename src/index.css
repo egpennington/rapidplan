@@ -673,6 +673,14 @@ main {
   background-color: #a80000;
 }
 
+.sg-light,
+.sg-heavy {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background-color: rgba(255,255,255,0.4); /* subtle tag background */
+  display: inline-block;
+}
+
 .sg-light {
   color: #207d4a;
   font-weight: bold;
@@ -690,6 +698,32 @@ main {
   color: #888;
   margin-top: 0.25rem;
 }
+
+.erg-block {
+  background-color: #fff4f4;
+  border: 1px solid #ffcccc;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  margin-top: 1rem;
+}
+
+.erg-block p:first-child {
+  color: #b00020;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.erg-block p {
+  margin: 0.2rem 0;
+}
+
+.erg-block small {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
 
 /* Section 4 custom layout */
 .hazard-grid {

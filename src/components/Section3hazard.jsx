@@ -105,6 +105,7 @@ export default function Section3Hazard() {
               {chem.VD && <p><strong>VD:</strong> {chem.VD}</p>}
               {chem.SG && <p><strong>SG:</strong> {chem.SG}</p>}
               {chem.LEL && <p><strong>LEL:</strong> {chem.LEL}</p>}
+              {chem.UEL && <p><strong>UEL:</strong> {chem.UEL}</p>}
               <div className="chemical-highlights">
                 {chem.SG && chem.physicalState === "Gas" && (
                   <p>
@@ -143,6 +144,18 @@ export default function Section3Hazard() {
                   </p>
                 )}
               </div>
+
+              {chem.ERGGuide && (
+                <div className="erg-block">
+                  <p><strong>🚨 ERG Response Data</strong></p>
+                  <p><strong>Guide:</strong> {chem.ERGGuide}</p>
+                  <p><strong>UN/NA:</strong> {chem.UNID}</p>
+                  <p><strong>Isolation:</strong> {chem.isolation}</p>
+                  <small title="See ERG Table 1 for day/night spill distances and special cases.">
+                    📘 See ERG Table 1 for day/night spill distances and special cases
+                  </small>
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -221,7 +221,10 @@ export const chemicalData = [
     VD: "1.2",
     SG: "1.19 (gas, air = 1)",
     LEL: "4.0%",
-    UEL: "44.0%"
+    UEL: "44.0%",
+    ERGGuide: "117 Toxic Gas",
+    UNID: "1053",
+    isolation: "100 meters / 330 feet (immediate precaution)"
   },
   {
     material: "Methane",
@@ -448,7 +451,8 @@ export const chemicalData = [
     VP: "Stable under pressure",
     VD: "Light as inspiration",
     SG: "Depends on the magic within",
-    LEL: "Doesn't explode — it enlightens"
+    LEL: "Doesn't explode — it enlightens",
+    UEL: "∞% (creativity is always explosive)"
   },
   // Emtonium™ is now officially the most powerful substance in your refinery
   // Add more chemicals here as needed...
