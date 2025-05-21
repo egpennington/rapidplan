@@ -115,7 +115,7 @@ export default function Section3Hazard() {
                       const sgValue = match ? parseFloat(match[0]) : null;
                       return sgValue !== null && (
                         <span className={sgValue < 1 ? "sg-light" : "sg-heavy"}>
-                          {sgValue < 1 ? " 🡅 Lighter than air" : " 🡇 Heavier than air"}
+                          {sgValue < 1 ? " ⬆️ Lighter than air" : " ⬇️ Heavier than air"}
                         </span>
                       );
                     })()}
