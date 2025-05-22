@@ -11,43 +11,53 @@ export const chemicalData = [
     VD: "0.9",
     SG: "0.91 (gas, air = 1)",
     LEL: "2.5%",
-    UEL: "100%"
+    UEL: "100%",
+    ERGGuide: "116 Flammable Gas (Unstable)",
+    UNID: "1001",
+    isolation: "100 meters / 330 feet (immediate, in all directions)"
   },
   {
     material: "Ammonia",
     physicalState: "Gas",
     MW: "17",
-    BP: "-28F",
+    BP: "-28°F",
     Sol: "34%",
     pH: "11.6 (solution)",
     IDLH: "300 ppm",
     FP: "None",
-    IP: "10.2 eV",
+    IP: "10.18 eV",
     VP: "8.5 atm @ 20°C",
     VD: "0.6",
     SG: "0.6 (gas, air = 1)",
     LEL: "15%",
-    UEL: "28%"
+    UEL: "28%",
+    ERGGuide: "125 Toxic Gas",
+    UNID: "1005",
+    isolation: "100 meters / 330 feet (immediate, in all directions)"
   },
   {
     material: "Argon",
     physicalState: "Gas",
-    MW: "39.94",
+    MW: "39.95",
     pH: "",
     IDLH: "Asphyxiant (No IDLH established)",
     FP: "Non-flammable",
     IP: "15.76 eV",
     VP: "N/A",
-    VD: "1.38",
+    VD: "1.66",
     SG: "1.38 (gas, air = 1)",
     LEL: "None",
     UEL: "None",
+    ERGGuide: "120 Inert Gas",
+    UNID: "1006",
+    isolation: "100 meters / 330 feet (immediate, in all directions)",
     asphyxiant: true
   },
   {
     material: "Benzene",
     physicalState: "Liquid",
     MW: "78.1",
+    BP: "176°F",
     pH: "",
     IDLH: "500 ppm",
     FP: "12.°F",
@@ -56,7 +66,11 @@ export const chemicalData = [
     VD: "2.7",
     SG: "0.88 (liquid, water = 1)",
     LEL: "1.2%",
-    UEL: "7.8%"
+    UEL: "7.8%",
+    ERGGuide: "130 Flammable Liquids",
+    UNID: "1114",
+    isolation: "50 meters / 150 feet (immediate, in all directions)",
+    carcinogen: true,
   },
   {
     material: "Butane",
@@ -65,12 +79,15 @@ export const chemicalData = [
     pH: "",
     IDLH: "1600 ppm",
     FP: "N/A (Gas)",
-    IP: "10.6 eV",
-    VP: "2.0 atm",
+    IP: "10.63 eV",
+    VP: "2.05 atm",
     VD: "2.0",
     SG: "2.11 (gas, air = 1)",
     LEL: "1.6%",
-    UEL: "8.4%"
+    UEL: "8.4%",
+    ERGGuide: "115 Flammable Gas",
+    UNID: "1011",
+    isolation: "100 meters / 330 feet (immediate, in all directions)"
   },
   {
     material: "2-Butanone (MEK)",
@@ -83,7 +100,10 @@ export const chemicalData = [
     VD: "2.5",
     SG: "0.81 (liquid, water = 1)",
     LEL: "1.4%",
-    UEL: "11.4%"
+    UEL: "11.4%",
+    ERGGuide: "127 Flammable Liquids",
+    UNID: "1193",
+    isolation: "50 meters / 150 feet (immediate, in all directions)"
   },  
   {
     material: "Carbon Monoxide",
@@ -97,6 +117,9 @@ export const chemicalData = [
     SG: "0.79 (gas, air = 1)",
     LEL: "12.5%",
     UEL: "74%",
+    ERGGuide: "119 Toxic Gas, Flammable",
+    UNID: "1016",
+    isolation: "30 meters / 100 feet (immediate, in all directions)",
     asphyxiant: true
   },
   {
@@ -105,12 +128,15 @@ export const chemicalData = [
     pH: "",
     IDLH: "40,000 ppm",
     FP: "None",
-    IP: "13.8 eV",
-    VP: "N/A",
+    IP: "13.77 eV",
+    VP: "56.5 atm",
     VD: "1.53",
     SG: "1.53 (gas, air = 1)",
     LEL: "N/A",
     UEL: "N/A",
+    ERGGuide: "120 Inert Gas",
+    UNID: "1013",
+    isolation: "100 meters / 330 feet (immediate, in all directions)",
     asphyxiant: true
   },
   {
@@ -120,12 +146,15 @@ export const chemicalData = [
     pH: "N/A",
     IDLH: "10 ppm",
     FP: "None",
-    IP: "11.5 eV",
+    IP: "11.48 eV",
     VP: "6.8 atm",
-    VD: "2.5",
-    SG: "2.5 (gas, air = 1)",
+    VD: "2.47",
+    SG: "2.47 (gas, air = 1)",
     LEL: "N/A",
-    UEL: "N/A"
+    UEL: "N/A",
+    ERGGuide: "124 Toxic Gas, Flammable",
+    UNID: "1017",
+    isolation: "30 meters / 100 feet (immediate, in all directions)",
   },
   {
     material: "Diesel Fuel",
@@ -138,7 +167,10 @@ export const chemicalData = [
     VD: "4.0",
     SG: "0.841 (liquid, water = 1)",
     LEL: "1.3%",
-    UEL: "6.0%"
+    UEL: "6.0%",
+    ERGGuide: "128 Flammable Liquids",
+    UNID: "1202",
+    isolation: "50 meters / 150 feet (immediate, in all directions)",
   },
   {
     material: "Ethanol",
@@ -151,7 +183,10 @@ export const chemicalData = [
     VD: "1.6",
     SG: "0.79 (liquid, water = 1)",
     LEL: "3.3%",
-    UEL: "19%"
+    UEL: "19%",
+    ERGGuide: "127 Flammable Liquids",
+    UNID: "1170",
+    isolation: "50 meters / 150 feet (immediate, in all directions)",
   },
   {
     material: "Ethylene",
@@ -165,7 +200,10 @@ export const chemicalData = [
     VD: "0.97",
     SG: "0.57 (gas, air = 1)",
     LEL: "2.7%",
-    UEL: "28.6%"
+    UEL: "28.6%",
+    ERGGuide: "116 Flammable Gas",
+    UNID: "1962",
+    isolation: "100 meters / 330 feet (immediate, in all directions)",
   },
   {
     material: "Gasoline",
@@ -179,10 +217,14 @@ export const chemicalData = [
     VD: "3.5",
     SG: "0.73 (liquid, water = 1)",
     LEL: "1.4%",
-    UEL: "7.6%"
+    UEL: "7.6%",
+    ERGGuide: "128 Flammable Liquids",
+    UNID: "1203",
+    isolation: "50 meters / 150 feet (immediate, in all directions)",
+    carcinogen: true,
   },
   {
-    material: "Hydrofluoric Acid",
+    material: "Hydrofluoric Fluoride/Hydrofluoric Acid",
     physicalState: "Liquid",
     MW: "20",
     pH: "<1",
@@ -193,21 +235,28 @@ export const chemicalData = [
     VD: "N/A",
     SG: "0.69 (gas, air = 1)",
     LEL: "N/A",
-    UEL: "N/A"
+    UEL: "N/A",
+    ERGGuide: "125 Toxic Gas",
+    UNID: "1052",
+    isolation: "100 meters / 330 feet (immediate, in all directions)",
   },
   {
     material: "Hydrogen",
     physicalState: "Gas",
     MW: "2.02",
     pH: "",
-    IDLH: "4000 ppm",
+    IDLH: "Not established",
     FP: "N/A (Gas)",
     IP: "15.4 eV",
     VP: "N/A",
     VD: "0.07",
     SG: "0.07 (gas, air = 1)",
     LEL: "4%",
-    UEL: "75%"
+    UEL: "75%",
+    asphyxiant: true,
+    ERGGuide: "115 Flammable Gas",
+    UNID: "1049",
+    isolation: "100 meters / 330 feet (immediate, in all directions)"
   },
   {
     material: "Hydrogen Sulfide",
@@ -224,7 +273,25 @@ export const chemicalData = [
     UEL: "44.0%",
     ERGGuide: "117 Toxic Gas",
     UNID: "1053",
-    isolation: "100 meters / 330 feet (immediate precaution)"
+    isolation: "100 meters / 330 feet (immediate, in all directions)"
+  },
+  {
+    material: "Liquefied Petroleum Gas (LPG)",
+    physicalState: "Gas",
+    MW: "44–58 (mixture)",
+    BP: "-44°F to -0.5°F",
+    pH: "",
+    IDLH: "2000 ppm (as propane/butane)",
+    FP: "N/A (Gas)",
+    IP: "10.3–11.1 eV",
+    VP: "2–8 atm",
+    VD: "1.5–2.0",
+    SG: "1.5 (gas, air = 1)",
+    LEL: "1.8%",
+    UEL: "9.5%",
+    ERGGuide: "115 Flammable Gas",
+    UNID: "1075",
+    isolation: "100 meters / 330 feet (immediate, in all directions)"
   },
   {
     material: "Methane",
@@ -239,6 +306,9 @@ export const chemicalData = [
     SG: "0.55 (gas, air = 1)",
     LEL: "5%",
     UEL: "15%",
+    ERGGuide: "115 Flammable Gas",
+    UNID: "1971",
+    isolation: "100 meters / 330 feet (immediate, in all directions)",
     asphyxiant: true
   },
   {
@@ -253,7 +323,10 @@ export const chemicalData = [
     VD: "1.1",
     SG: "0.79 (liquid, water = 1)",
     LEL: "6%",
-    UEL: "36%"
+    UEL: "36%",
+    ERGGuide: "131 Flammable Liquids",
+    UNID: "1230",
+    isolation: "50 meters / 150 feet (immediate, in all directions)",
   },
   {
     material: "Naphtha",
@@ -267,7 +340,11 @@ export const chemicalData = [
     VD: ">1",
     SG: "0.8 (liquid, water = 1)",
     LEL: "1.1%",
-    UEL: "5.9%"
+    UEL: "5.9%",
+    ERGGuide: "128 Flammable Liquids",
+    UNID: "1268",
+    isolation: "50 meters / 150 feet (immediate, in all directions)",
+    carcinogen: true,
   },
   {
     material: "Natural Gas",
@@ -282,6 +359,9 @@ export const chemicalData = [
     SG: "0.55 (gas, air = 1)",
     LEL: "5%",
     UEL: "15%",
+    ERGGuide: "115 Flammable Gas",
+    UNID: "1971",
+    isolation: "100 meters / 330 feet (immediate, in all directions)",
     asphyxiant: true
 
   },
@@ -298,6 +378,9 @@ export const chemicalData = [
     SG: "0.97 (gas, air = 1)",
     LEL: "N/A",
     UEL: "N/A",
+    ERGGuide: "120 Inert Gases",
+    UNID: "1066",
+    isolation: "100 meters / 330 feet (immediate, in all directions)",
     asphyxiant: true
   },
   {
@@ -312,7 +395,10 @@ export const chemicalData = [
     VD: "1.6",
     SG: "2.62 (gas, air = 1)",
     LEL: "N/A",
-    UEL: "N/A"
+    UEL: "N/A",
+    ERGGuide: "124 Flammable Liquids",
+    UNID: "1067",
+    isolation: "100 meters / 330 feet (immediate, in all directions)",
   },
   {
     material: "Pentane",
@@ -321,40 +407,51 @@ export const chemicalData = [
     pH: "",
     IDLH: "1500 ppm",
     FP: "-57°F",
-    IP: "10.3 eV",
+    IP: "10.34 eV",
     VP: "0.55 atm",
     VD: "2.5",
     SG: "0.63 (liquid, water = 1)",
     LEL: "1.5%",
-    UEL: "7.8%"
+    UEL: "7.8%",
+    ERGGuide: "128 Flammable Liquids",
+    UNID: "1265",
+    isolation: "50 meters / 150 feet (immediate, in all directions)",
   },
   {
     material: "Phenol",
     physicalState: "Solid/Liquid",
     MW: "94.1",
+    BP: "359°F",
     pH: "5.4 (soln)",
     IDLH: "250 ppm",
     FP: "175°F",
-    IP: "8.5 eV",
+    IP: "8.50 eV",
     VP: "0.0008 atm",
     VD: "3.2",
     SG: "1.06 (liquid, water = 1)",
     LEL: "1.8%",
-    UEL: "8.6%"
+    UEL: "8.6%",
+    ERGGuide: "153 Toxic Substances - Corrisive",
+    UNID: "2821",
+    isolation: "50 meters / 150 feet (immediate, in all directions)",    
   },
   {
     material: "Propane",
     physicalState: "Gas",
     MW: "44.1",
+    BP: "-44F",
     pH: "",
     IDLH: "2100 ppm",
     FP: "N/A (Gas)",
-    IP: "11.7 eV",
+    IP: "11.07 eV",
     VP: "8.4 atm",
     VD: "1.5",
     SG: "1.55 (gas, air = 1)",
     LEL: "2.1%",
-    UEL: "9.5%"
+    UEL: "9.5%",
+    ERGGuide: "115 Flammable Gases",
+    UNID: "1978",
+    isolation: "100 meters / 330 feet (immediate, in all directions)",
   },
   {
     material: "Propylene",
@@ -368,7 +465,10 @@ export const chemicalData = [
     VD: "1.5",
     SG: "0.6 (gas, air = 1)",
     LEL: "2%",
-    UEL: "11.1%"
+    UEL: "11.1%",
+    ERGGuide: "115 Flammable Gases",
+    UNID: "1077",
+    isolation: "100 meters / 330 feet (immediate, in all directions)",
   },
   {
     material: "Sodium Hydroxide",
@@ -382,7 +482,10 @@ export const chemicalData = [
     VD: "N/A",
     SG: "2.13 (50% solution, water = 1)",
     LEL: "N/A",
-    UEL: "N/A"
+    UEL: "N/A",
+    ERGGuide: "154 Toxic/Corrosive Substances",
+    UNID: "1823(solid/ 1824(liquid)",
+    isolation: "50 meters / 150 feet (immediate, in all directions)",
   },
   {
     material: "Sulfur Dioxide",
@@ -391,12 +494,15 @@ export const chemicalData = [
     pH: "",
     IDLH: "100 ppm",
     FP: "N/A (Gas)",
-    IP: "12.3 eV",
+    IP: "12.30 eV",
     VP: "3.2 atm",
     VD: "2.3",
     SG: "2.26 (gas, air = 1)",
     LEL: "N/A",
-    UEL: "N/A"
+    UEL: "N/A",
+    ERGGuide: "125 Toxic/Corrosive Gases",
+    UNID: "1079",
+    isolation: "100 meters / 330 feet (immediate, in all directions)",
   },
   {
     material: "Sulfuric Acid",
@@ -410,7 +516,10 @@ export const chemicalData = [
     VD: "N/A",
     SG: "1.84",
     LEL: "N/A",
-    UEL: "N/A"
+    UEL: "N/A",
+    ERGGuide: "137 Corrosive/Water-Reactive Substances",
+    UNID: "1830",
+    isolation: "50 meters / 150 feet (immediate, in all directions)",
   },
   {
     material: "Toluene",
@@ -424,7 +533,7 @@ export const chemicalData = [
     VD: "3.2",
     SG: "0.87 (liquid, water = 1)",
     LEL: "1.1%",
-    UEL: "7.1%"
+    UEL: "7.1%",
   },
   {
     material: "Xylene",
@@ -438,7 +547,7 @@ export const chemicalData = [
     VD: "3.7",
     SG: "0.86 (liquid, water = 1)",
     LEL: "1.1%",
-    UEL: "7.0%"
+    UEL: "7.0%",
   },
   {
     material: "Emtonium",

@@ -143,6 +143,12 @@ export default function Section3Hazard() {
                     <strong>Asphyxiant</strong> – Displaces oxygen in confined spaces
                   </p>
                 )}
+
+                {chem.carcinogen && (
+                  <p className="carcinogen-tag">
+                    <i className="fa-solid fa-skull-crossbones fa-sm"></i> <strong>Carcinogen</strong> – Known to cause cancer with prolonged exposure
+                  </p>
+                )}
               </div>
 
               {chem.ERGGuide && (
