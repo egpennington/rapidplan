@@ -534,6 +534,9 @@ export const chemicalData = [
     SG: "0.87 (liquid, water = 1)",
     LEL: "1.1%",
     UEL: "7.1%",
+    ERGGuide: "130 Flammable Liquids",
+    UNID: "1294",
+    isolation: "50 meters / 150 feet (immediate, in all directions)"
   },
   {
     material: "Xylene",
@@ -548,6 +551,9 @@ export const chemicalData = [
     SG: "0.86 (liquid, water = 1)",
     LEL: "1.1%",
     UEL: "7.0%",
+    ERGGuide: "130 Flammable Liquids",
+    UNID: "1307",
+    isolation: "50 meters / 150 feet (immediate, in all directions)"
   },
   {
     material: "Emtonium",
@@ -561,7 +567,7 @@ export const chemicalData = [
     VD: "Light as inspiration",
     SG: "Depends on the magic within",
     LEL: "Doesn't explode — it enlightens",
-    UEL: "∞% (creativity is always explosive)"
+    UEL: "∞% (creativity is always explosive)",
   },
   // Emtonium™ is now officially the most powerful substance in your refinery
   // Add more chemicals here as needed...
