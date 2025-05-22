@@ -14,7 +14,7 @@ export const chemicalData = [
     UEL: "100%",
     ERGGuide: "116 Flammable Gas (Unstable)",
     UNID: "1001",
-    isolation: "100 meters / 330 feet (immediate, in all directions)"
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)"
   },
   {
     material: "Ammonia",
@@ -33,7 +33,7 @@ export const chemicalData = [
     UEL: "28%",
     ERGGuide: "125 Toxic Gas",
     UNID: "1005",
-    isolation: "100 meters / 330 feet (immediate, in all directions)"
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)"
   },
   {
     material: "Argon",
@@ -50,7 +50,7 @@ export const chemicalData = [
     UEL: "None",
     ERGGuide: "120 Inert Gas",
     UNID: "1006",
-    isolation: "100 meters / 330 feet (immediate, in all directions)",
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)",
     asphyxiant: true
   },
   {
@@ -69,7 +69,7 @@ export const chemicalData = [
     UEL: "7.8%",
     ERGGuide: "130 Flammable Liquids",
     UNID: "1114",
-    isolation: "50 meters / 150 feet (immediate, in all directions)",
+    isolation: "50 meters / 150 feet (immediate precaution, in all directions)",
     carcinogen: true,
   },
   {
@@ -87,7 +87,7 @@ export const chemicalData = [
     UEL: "8.4%",
     ERGGuide: "115 Flammable Gas",
     UNID: "1011",
-    isolation: "100 meters / 330 feet (immediate, in all directions)"
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)"
   }, 
   {
     material: "Carbon Monoxide",
@@ -103,7 +103,7 @@ export const chemicalData = [
     UEL: "74%",
     ERGGuide: "119 Toxic Gas, Flammable",
     UNID: "1016",
-    isolation: "30 meters / 100 feet (immediate, in all directions)",
+    isolation: "30 meters / 100 feet (immediate precaution, in all directions)",
     asphyxiant: true
   },
   {
@@ -120,7 +120,7 @@ export const chemicalData = [
     UEL: "N/A",
     ERGGuide: "120 Inert Gas",
     UNID: "1013",
-    isolation: "100 meters / 330 feet (immediate, in all directions)",
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)",
     asphyxiant: true
   },
   {
@@ -138,7 +138,7 @@ export const chemicalData = [
     UEL: "N/A",
     ERGGuide: "124 Toxic Gas, Flammable",
     UNID: "1017",
-    isolation: "30 meters / 100 feet (immediate, in all directions)",
+    isolation: "30 meters / 100 feet (immediate precaution, in all directions)",
   },
   {
     material: "Diesel Fuel",
@@ -154,7 +154,7 @@ export const chemicalData = [
     UEL: "6.0%",
     ERGGuide: "128 Flammable Liquids",
     UNID: "1202",
-    isolation: "50 meters / 150 feet (immediate, in all directions)",
+    isolation: "50 meters / 150 feet (immediate precaution, in all directions)",
   },
   {
     material: "Ethanol",
@@ -170,7 +170,7 @@ export const chemicalData = [
     UEL: "19%",
     ERGGuide: "127 Flammable Liquids",
     UNID: "1170",
-    isolation: "50 meters / 150 feet (immediate, in all directions)",
+    isolation: "50 meters / 150 feet (immediate precaution, in all directions)",
   },
   {
     material: "Ethylene",
@@ -187,7 +187,7 @@ export const chemicalData = [
     UEL: "28.6%",
     ERGGuide: "116 Flammable Gas",
     UNID: "1962",
-    isolation: "100 meters / 330 feet (immediate, in all directions)",
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)",
   },
   {
     material: "Gasoline",
@@ -204,7 +204,7 @@ export const chemicalData = [
     UEL: "7.6%",
     ERGGuide: "128 Flammable Liquids",
     UNID: "1203",
-    isolation: "50 meters / 150 feet (immediate, in all directions)",
+    isolation: "50 meters / 150 feet (immediate precaution, in all directions)",
     carcinogen: true,
   },
   {
@@ -222,7 +222,7 @@ export const chemicalData = [
     UEL: "N/A",
     ERGGuide: "125 Toxic Gas",
     UNID: "1052",
-    isolation: "100 meters / 330 feet (immediate, in all directions)",
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)",
   },
   {
     material: "Hydrogen",
@@ -240,7 +240,7 @@ export const chemicalData = [
     asphyxiant: true,
     ERGGuide: "115 Flammable Gas",
     UNID: "1049",
-    isolation: "100 meters / 330 feet (immediate, in all directions)"
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)"
   },
   {
     material: "Hydrogen Sulfide",
@@ -257,7 +257,7 @@ export const chemicalData = [
     UEL: "44.0%",
     ERGGuide: "117 Toxic Gas",
     UNID: "1053",
-    isolation: "100 meters / 330 feet (immediate, in all directions)"
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)"
   },
   {
     material: "Liquefied Petroleum Gas (LPG)",
@@ -275,7 +275,7 @@ export const chemicalData = [
     UEL: "9.5%",
     ERGGuide: "115 Flammable Gas",
     UNID: "1075",
-    isolation: "100 meters / 330 feet (immediate, in all directions)"
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)"
   },
   {
     material: "MEK (2-Butanone)",
@@ -291,7 +291,7 @@ export const chemicalData = [
     UEL: "11.4%",
     ERGGuide: "127 Flammable Liquids",
     UNID: "1193",
-    isolation: "50 meters / 150 feet (immediate, in all directions)"
+    isolation: "50 meters / 150 feet (immediate precaution, in all directions)"
   }, 
   {
     material: "Methane",
@@ -308,7 +308,7 @@ export const chemicalData = [
     UEL: "15%",
     ERGGuide: "115 Flammable Gas",
     UNID: "1971",
-    isolation: "100 meters / 330 feet (immediate, in all directions)",
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)",
     asphyxiant: true
   },
   {
@@ -326,7 +326,7 @@ export const chemicalData = [
     UEL: "36%",
     ERGGuide: "131 Flammable Liquids",
     UNID: "1230",
-    isolation: "50 meters / 150 feet (immediate, in all directions)",
+    isolation: "50 meters / 150 feet (immediate precaution, in all directions)",
   },
   {
     material: "Naphtha",
@@ -343,7 +343,7 @@ export const chemicalData = [
     UEL: "5.9%",
     ERGGuide: "128 Flammable Liquids",
     UNID: "1268",
-    isolation: "50 meters / 150 feet (immediate, in all directions)",
+    isolation: "50 meters / 150 feet (immediate precaution, in all directions)",
     carcinogen: true,
   },
   {
@@ -361,7 +361,7 @@ export const chemicalData = [
     UEL: "15%",
     ERGGuide: "115 Flammable Gas",
     UNID: "1971",
-    isolation: "100 meters / 330 feet (immediate, in all directions)",
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)",
     asphyxiant: true
 
   },
@@ -380,7 +380,7 @@ export const chemicalData = [
     UEL: "N/A",
     ERGGuide: "120 Inert Gases",
     UNID: "1066",
-    isolation: "100 meters / 330 feet (immediate, in all directions)",
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)",
     asphyxiant: true
   },
   {
@@ -398,7 +398,7 @@ export const chemicalData = [
     UEL: "N/A",
     ERGGuide: "124 Flammable Liquids",
     UNID: "1067",
-    isolation: "100 meters / 330 feet (immediate, in all directions)",
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)",
   },
   {
     material: "Pentane",
@@ -415,7 +415,7 @@ export const chemicalData = [
     UEL: "7.8%",
     ERGGuide: "128 Flammable Liquids",
     UNID: "1265",
-    isolation: "50 meters / 150 feet (immediate, in all directions)",
+    isolation: "50 meters / 150 feet (immediate precaution, in all directions)",
   },
   {
     material: "Phenol",
@@ -433,7 +433,7 @@ export const chemicalData = [
     UEL: "8.6%",
     ERGGuide: "153 Toxic Substances - Corrisive",
     UNID: "2821",
-    isolation: "50 meters / 150 feet (immediate, in all directions)",    
+    isolation: "50 meters / 150 feet (immediate precaution, in all directions)",    
   },
   {
     material: "Propane",
@@ -451,7 +451,7 @@ export const chemicalData = [
     UEL: "9.5%",
     ERGGuide: "115 Flammable Gases",
     UNID: "1978",
-    isolation: "100 meters / 330 feet (immediate, in all directions)",
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)",
   },
   {
     material: "Propylene",
@@ -468,7 +468,7 @@ export const chemicalData = [
     UEL: "11.1%",
     ERGGuide: "115 Flammable Gases",
     UNID: "1077",
-    isolation: "100 meters / 330 feet (immediate, in all directions)",
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)",
   },
   {
     material: "Sodium Hydroxide",
@@ -485,7 +485,7 @@ export const chemicalData = [
     UEL: "N/A",
     ERGGuide: "154 Toxic/Corrosive Substances",
     UNID: "1823(solid/ 1824(liquid)",
-    isolation: "50 meters / 150 feet (immediate, in all directions)",
+    isolation: "50 meters / 150 feet (immediate precaution, in all directions)",
   },
   {
     material: "Sulfur Dioxide",
@@ -502,7 +502,7 @@ export const chemicalData = [
     UEL: "N/A",
     ERGGuide: "125 Toxic/Corrosive Gases",
     UNID: "1079",
-    isolation: "100 meters / 330 feet (immediate, in all directions)",
+    isolation: "100 meters / 330 feet (immediate precaution, in all directions)",
   },
   {
     material: "Sulfuric Acid",
@@ -519,7 +519,7 @@ export const chemicalData = [
     UEL: "N/A",
     ERGGuide: "137 Corrosive/Water-Reactive Substances",
     UNID: "1830",
-    isolation: "50 meters / 150 feet (immediate, in all directions)",
+    isolation: "50 meters / 150 feet (immediate precaution, in all directions)",
   },
   {
     material: "Toluene",
@@ -536,7 +536,7 @@ export const chemicalData = [
     UEL: "7.1%",
     ERGGuide: "130 Flammable Liquids",
     UNID: "1294",
-    isolation: "50 meters / 150 feet (immediate, in all directions)"
+    isolation: "50 meters / 150 feet (immediate precaution, in all directions)"
   },
   {
     material: "Xylene",
@@ -553,7 +553,7 @@ export const chemicalData = [
     UEL: "7.0%",
     ERGGuide: "130 Flammable Liquids",
     UNID: "1307",
-    isolation: "50 meters / 150 feet (immediate, in all directions)"
+    isolation: "50 meters / 150 feet (immediate precaution, in all directions)"
   },
   {
     material: "Emtonium",
