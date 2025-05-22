@@ -88,23 +88,7 @@ export const chemicalData = [
     ERGGuide: "115 Flammable Gas",
     UNID: "1011",
     isolation: "100 meters / 330 feet (immediate, in all directions)"
-  },
-  {
-    material: "2-Butanone (MEK)",
-    physicalState: "Liquid",
-    pH: "",
-    IDLH: "3000 ppm",
-    FP: "16°F",
-    IP: "9.5 eV",
-    VP: "0.11 atm",
-    VD: "2.5",
-    SG: "0.81 (liquid, water = 1)",
-    LEL: "1.4%",
-    UEL: "11.4%",
-    ERGGuide: "127 Flammable Liquids",
-    UNID: "1193",
-    isolation: "50 meters / 150 feet (immediate, in all directions)"
-  },  
+  }, 
   {
     material: "Carbon Monoxide",
     physicalState: "Gas",
@@ -293,6 +277,22 @@ export const chemicalData = [
     UNID: "1075",
     isolation: "100 meters / 330 feet (immediate, in all directions)"
   },
+  {
+    material: "MEK (2-Butanone)",
+    physicalState: "Liquid",
+    pH: "",
+    IDLH: "3000 ppm",
+    FP: "16°F",
+    IP: "9.5 eV",
+    VP: "0.11 atm",
+    VD: "2.5",
+    SG: "0.81 (liquid, water = 1)",
+    LEL: "1.4%",
+    UEL: "11.4%",
+    ERGGuide: "127 Flammable Liquids",
+    UNID: "1193",
+    isolation: "50 meters / 150 feet (immediate, in all directions)"
+  }, 
   {
     material: "Methane",
     physicalState: "Gas",
