@@ -18,7 +18,7 @@ export default function Section3Hazard() {
     const chem = chemicalData.find(c => c.material === selectedChemical);
     if (chem && !selectedChemicals.some(c => c.material === chem.material)) {
       setSelectedChemicals(prev => {
-        const updated = [...prev, chem];
+        const updated = [chem, ...prev];
         setAddedIndex(updated.length - 1);
         setTimeout(() => setAddedIndex(null), 500);
         return updated;
