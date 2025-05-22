@@ -15,13 +15,31 @@ export default function AboutModal({ onClose, initialView = 'about' }) {
 
         {view === 'about' && (
           <>
-            <p><img src="/images/logo-green.png" className="logo-sm" alt="Rapid Plan R logo in green" /><strong>apidPlan</strong> is a mobile-first emergency response tool for creating fast, accurate Site Safety and Control Plans during hazardous materials and refinery incidents.</p>
+            <p>
+              <img src="/images/logo-green.png" className="logo-sm" alt="Rapid Plan R logo in green" />
+              <strong>apidPlan</strong> is a mobile-first emergency response tool for creating fast, accurate Site Safety and Control Plans during hazardous materials and refinery incidents.
+            </p>
+        
             <p><strong>📋 Based on ICS 208 Guidelines</strong></p>
-            <p>Designed for clarity and speed in the field, <img src="/images/logo-green.png" className="logo-sm" alt="Rapid Plan R logo in green" />apidPlan features quick dropdowns, pre-filled chemical hazard data, and export-ready reports, and real-time site photo capture — preserving visual layouts directly in your plan.</p>
-            <p>Now featuring <strong>voice recognition</strong> in key fields like incident name and entry objectives—allowing hands-free input in critical moments.</p>
-            <p><em>Offline access</em> and installable app capabilities are coming soon.</p>
-
-            <p style={{ fontSize: '1.2rem', color: '#666', marginTop: '1.5rem' }}><strong>Version:</strong> v{APP_VERSION}</p>
+        
+            <p>
+              Designed for clarity and speed in the field, <img src="/images/logo-green.png" className="logo-sm" alt="Rapid Plan R logo in green" />
+              apidPlan includes smart dropdowns, searchable chemical data, and export-ready layouts that preserve hazard assessments, entry objectives, and site photos.
+            </p>
+        
+            <p>
+              Now featuring <strong>ERG integration</strong> with Guide Numbers, UN/NA IDs, and isolation distances for each chemical. Automatically highlights <strong>asphyxiants</strong>, <strong>carcinogens</strong>, and <strong>corrosives</strong>, and interprets Specific Gravity for air and water behavior.
+            </p>
+        
+            <p>
+              Use <strong>voice recognition</strong> to enter key fields like incident name and entry objectives — for fast, hands-free documentation in the field.
+            </p>
+        
+            <p><em>Offline access</em> and installable app features are coming soon.</p>
+        
+            <p style={{ fontSize: '1.2rem', color: '#666', marginTop: '1.5rem' }}>
+              <strong>Version:</strong> v{APP_VERSION}
+            </p>
           </>
         )}
 
