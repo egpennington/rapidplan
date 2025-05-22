@@ -571,6 +571,7 @@ export const chemicalData = [
     ERGGuide: "999 – Reality-Altering Substances",
     UNID: "0000",
     isolation: "1 km / 0.62 miles (minimum safe distance for non-visionaries)",
+    legendary: true,
     notes: "Handle only with clarity of mind and purpose. PPE includes open mind, steady hands, and caffeine."
   },
   // Emtonium™ is now officially the most powerful substance in your refinery
