@@ -107,17 +107,27 @@ export default function Section3Hazard() {
               {chem.LEL && <p><strong>LEL:</strong> {chem.LEL}</p>}
               {chem.UEL && <p><strong>UEL:</strong> {chem.UEL}</p>}
               <div className="chemical-highlights">
-                {chem.SG && chem.physicalState === "Gas" && (
+                {chem.SG && (
                   <p>
                     <strong>SG:</strong> {chem.SG}
                     {(() => {
                       const match = chem.SG.match(/[\d.]+/);
                       const sgValue = match ? parseFloat(match[0]) : null;
-                      return sgValue !== null && (
-                        <span className={sgValue < 1 ? "sg-light" : "sg-heavy"}>
-                          {sgValue < 1 ? " ⬆️ Lighter than air" : " ⬇️ Heavier than air"}
-                        </span>
-                      );
+                
+                      if (sgValue === null) return null;
+                
+                      const isGas = chem.physicalState === "Gas";
+                      const threshold = 1; // Air = 1 for gas, Water = 1 for liquid
+                      const tagClass = sgValue < threshold ? "sg-light" : "sg-heavy";
+                      const description = isGas
+                        ? sgValue < 1
+                          ? "⬆️ Lighter than air"
+                          : "⬇️ Heavier than air"
+                        : sgValue < 1
+                          ? "⬆️ Floats on water"
+                          : "⬇️ Sinks in water";
+                
+                      return <span className={tagClass}> {description}</span>;
                     })()}
                   </p>
                 )}
