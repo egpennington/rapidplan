@@ -103,7 +103,6 @@ export default function Section3Hazard() {
               {chem.FP && <p><strong>FP:</strong> {chem.FP}</p>}              
               {chem.VP && <p><strong>VP:</strong> {chem.VP}</p>}
               {chem.VD && <p><strong>VD:</strong> {chem.VD}</p>}
-              {chem.SG && <p><strong>SG:</strong> {chem.SG}</p>}
               {chem.LEL && <p><strong>LEL:</strong> {chem.LEL}</p>}
               {chem.UEL && <p><strong>UEL:</strong> {chem.UEL}</p>}
               <div className="chemical-highlights">

@@ -36,7 +36,7 @@ export default function AboutModal({ onClose, initialView = 'about' }) {
             </p>
 
             <p>
-              Fully supports <strong>offline mode</strong>, <strong>installable app features</strong>, and <strong>PWA caching</strong> — ensuring full access even in remote conditions.
+              Fully supports <strong>offline mode</strong> and can be <strong>installed on phones or tablets</strong> — ensuring full access even in remote conditions with no signal.
             </p>
 
             <p style={{ fontSize: '1.2rem', color: '#666', marginTop: '1.5rem' }}>
