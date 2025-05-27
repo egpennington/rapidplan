@@ -17,7 +17,7 @@ export default function AboutModal({ onClose, initialView = 'about' }) {
           <>
             <p>
               <img src="/images/logo-green.png" className="logo-sm" alt="Rapid Plan R logo in green" />
-              <strong>apidPlan</strong> is a mobile-first emergency response tool for building fast, accurate Site Safety and Control Plans during hazardous materials and refinery incidents.
+              <strong>apidPlan</strong> is a mobile-first emergency response tool for building fast, accurate Site Safety and Control Plans during hazardous materials and refinery incidents. Designed for refinery and hazmat incidents using ICS 208 guidelines.
             </p>
 
             <p><strong>📋 Based on ICS 208 Guidelines</strong></p>
